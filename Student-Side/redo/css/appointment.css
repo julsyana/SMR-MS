@@ -1,0 +1,929 @@
+@import url("./style.css");
+
+main .container .appointment-list-container .link-header{
+   display: flex;
+   align-items: center;
+   /* margin-bottom: 10px; */
+   background-color: red;
+
+}
+
+main .container .appointment-list-container .link-header h3{
+   color: #8d8d8d;
+   font-weight: 500;
+}
+
+main .container .appointment-list-container .appointment-list .add-new-app{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+main .container .appointment-list-container .appointment-list .add-new-app a{
+
+   background-color: var(--primary);
+   color: #fff;
+   padding: 8px 20px;
+   border-radius: 5em;
+   transition: all ease-in .4s;
+}
+
+main .container .appointment-list-container .appointment-list .add-new-app a:hover{
+   background-color: var(--hover);
+}
+
+
+
+main .container .appointment-list-container .appointment-list  table{
+   width: 100%;
+   border-collapse: collapse;
+   background-color: #fff;
+   border-radius: 6px;
+   overflow: hidden;
+   box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
+}
+
+main .container .appointment-list-container .appointment-list  table thead{
+   border-bottom: 1px solid black;
+}
+
+main .container .appointment-list-container .appointment-list  table thead tr th{
+   padding: 15px 6px;
+   font-weight: 400;
+   color: #8d8d8d;
+}
+
+main .container .appointment-list-container .appointment-list  table tbody tr td{
+   text-align: center;
+   padding: 15px 5px;
+   font-size: .9em;
+   color: #787878;;
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .status{
+   text-transform: capitalize;
+   border-radius: 5px;
+   padding: 5px 10px;
+   font-size: 1em;
+   font-weight: 500;
+   width: max-content;
+   margin: auto;
+   color: #9e9e9e;
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .type{
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: max-content;
+   font-size: .9em;
+   color: #fff;
+   background-color: var(--primary);
+   padding: 4% 8%;
+   border-radius: 5em;
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .action{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .action .form-button button{
+   font-size: 1em;
+   padding: 5px 5px;
+   margin: 0 5px 0 0;
+   border-radius: 4px;
+   color: #fff;
+   border: none;
+   background-color: var(--primary);
+   cursor: pointer;
+   transition: all ease-in .4s;
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .action .form-button button#appoint_cancel{
+   background-color: var(--decline);
+}
+
+
+main .container .appointment-list-container .appointment-list table tbody tr td .action .form-button button#appoint_cancel:hover{
+   background-color: var(--hoverDecline);
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .action .form-button button:hover{   
+   background-color: var(--hover);
+}
+
+main .container .appointment-list-container .appointment-list table tbody tr td .action .form-button button#appoint_cancel:disabled{
+   background-color: #9c9c9c;
+   cursor: default;
+}
+
+
+
+
+main .container .appointment-details-container .link-header{
+   display: flex;
+   align-items: center;
+   /* margin-bottom: 5px; */
+}
+
+main .container .appointment-details-container .link-header h3{
+   color: var(--primary);
+   font-size: 1em;
+   font-weight: 600;
+}
+
+main .container .appointment-details-container .link-header h3 a{
+   color: #8d8d8d;
+}
+
+main .container .appointment-details-container .link-header h3 a:hover{
+   color: var(--primary);
+}
+
+
+
+
+
+
+/* Set Type of Appointment */
+main .container .appointment-details-container .appointment-detail{
+   display: flex;
+   flex-direction: column;
+}
+
+
+main .container .appointment-details-container .appointment-detail h3{
+   margin-bottom: 5px;
+}
+
+main .container .appointment-details-container .appointment-detail form{
+   
+   width: 100%;
+   height: 100%;
+   background-color: #fff;
+   border-radius: 6px;
+   padding: 2%;
+   box-shadow: 0 7px 10px 0 rgba(0,0,0,.2);
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment{
+   display: flex;
+   flex-direction: column;
+
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input{
+   width: 100%;
+   margin-bottom: 5px;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input span{
+   color: var(--decline);
+  
+}
+
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input select, .type-of-appointment .form-input input, .type-of-appointment .form-input textarea{
+   width: 100%;
+   font-size: 1em;
+   border: 1px solid #00000041;
+   outline: none;
+   background-color: #fff;
+   padding: 8px 12px;
+   resize: none;
+   border-radius: 4px;
+
+}
+
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input select{
+   width: max-content;
+   /* background-color: var(--primary); */
+   color: #020202;
+   /* border: none; */
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input select:focus{
+   background-color: var(--primary);
+   color: #fff;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input select:hover{
+   background-color: var(--primary);
+   color: #fff;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input textarea{
+   height: 100px;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input textarea:focus{
+   border: 1px solid var(--primary);
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi label{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+   border-radius: 10px;
+   border: 2px dashed #00000076;
+   background-color: rgb(228, 228, 228);
+   width: 100%;
+   height: 120px;
+   color: #577ddcad;
+   cursor: pointer;
+   transition: all ease-in-out .4s;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi label span{
+   color: var(--decline);
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi label:hover{
+   --primary: #cfd6e8;
+   background-color: var(--primary);
+   color: #3464ddad;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi .file-viewer{
+   /* background-color: red; */
+   width: 100%;
+   height: max-content;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   margin-top: 10px;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi .file-viewer figure{
+   position: relative;
+   width: 100px;
+   height: 100px;
+   margin-right: 10px;
+
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi .file-viewer figure img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi .file-viewer figure figcaption{
+   position: absolute;
+   top: 100%;
+   text-align: center;
+   font-size: .9em;
+   color: #747474;
+   background-color: red;
+}
+
+/* main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-input.image-multi input{
+   display: none;
+} */
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next a{
+
+   font-size: 1em;
+   border: none;
+   padding: 5px 15px;
+   margin-left: 10px;
+   border-radius: 6px;
+   background-color: #bbbbbb;
+   color: #fff;
+   cursor: pointer;
+   transition: background ease-in-out .4s;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next a:hover{
+   background-color: #9e9e9e;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next button{
+   font-size: 1em;
+   border: none;
+   padding: 5px 15px;
+   margin-left: 10px;
+   border-radius: 6px;
+   background-color: #bbbbbb;
+   color: #fff;
+   cursor: pointer;
+   transition: background ease-in-out .4s;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next button:hover{
+   background-color: #9e9e9e;
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next button#appoint-next{
+   background-color: var(--primary);
+}
+
+main .container .appointment-details-container .appointment-detail form .type-of-appointment .form-button-next button#appoint-next:hover{
+   background-color: var(--hover);
+}
+
+
+
+
+
+/* Set Date */
+
+main .container .appointment-details-container .appointment-detail form .set-schedule{
+   /* padding: 10%; */
+   width: 100%;
+   height: 100%;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .header-title{
+   /* font-size: .5em; */
+   margin-bottom: 10px;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container{
+   width: 100%;
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+}
+
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar{
+   /* background-color: #bdbdbd; */
+   width: max-content;
+   min-width: 55%;
+   padding: 2%;
+   height: max-content;
+   height: 100%;
+   border-radius: 8px;
+   border: 1px solid rgba(0,0,0,.2);
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button .button-next-prev{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   /* width: 200px; */
+   /* background-color: rebeccapurple; */
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button .button-next-prev .btn{
+   background-color: #dedede;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   overflow: hidden;
+   /* padding: 10px; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 10px;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button .button-next-prev .btn button{ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* background-color: wheat; */
+   background-color: none;
+   border: none;
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button .button-next-prev .btn button:hover{
+   background-color: var(--primary);
+   
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button .button-next-prev .btn button:hover .fas{
+   color: #fff;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .month-year-button .button-next-prev .btn button .fas {
+   color: #727272;;
+}  
+
+
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .weeks{
+   margin-top: 5px;
+   display: grid;
+   grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+   text-align: center;
+   justify-content: space-evenly;
+   background-color: var(--primary);
+   margin-bottom: 5px;
+   
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .weeks .week{
+   color: #fff;
+   width: inherit;
+   height: inherit;
+   margin: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days{
+   display: grid;
+   grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+   align-items: center;
+   justify-content: space-between;
+   /* background-color: #9e9e9e; */
+}
+
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .day{
+   width: 100%;
+   height: 50px;
+   /* margin: 5px; */
+   border: 1px solid rgba(0,0,0,.2);
+   cursor: pointer;
+   transition: all ease-in-out .2s;
+
+}
+
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .day label{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+
+}
+
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .day input:checked ~ label{
+   background-color: var(--primary);
+   color: #fff;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .day input:disabled ~ label {
+   /* background-color: #e7e7e7; */
+   color: #a9a9a9;
+}
+
+main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days div:hover:not(.today), .days div:hover:not(.prev-date), .days div:hover:not(.next-date) {
+   background-color: var(--primary);
+   color: #fff;
+   border-color: var(--primary);
+ }
+ 
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .prev-date,
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .next-date {
+   opacity: .5;
+   cursor: default;
+ }
+ 
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .calendar .days .today {
+   background-color: #e1e1e1;
+   border-radius: 4px;
+   /* color: #fff; */
+   cursor: default;
+ }
+ 
+
+
+
+ /* time slot */
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot{
+   /* background-color: red; */
+   width: 50%;
+   /* padding: 0 2%; */
+   margin-left: 20px;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table{
+   width: 100%;
+   border-collapse: collapse;
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
+   overflow: hidden;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table thead{
+   background-color: var(--primary);
+   color: #fff;
+   padding: 5%;
+   border-radius: 5px;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table thead tr th{
+   padding: 2%;
+   font-weight: 500;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table tbody tr td:first-child{
+   border-right: 1px solid black;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table tbody tr td{
+   font-size: 1em;
+   padding: 5% 0;
+   text-align: center;
+   background-color: rgb(240, 240, 240);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.207);
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table tbody tr td label{
+   /* background-color: red; */
+   padding: 6px 10px;
+   border-radius: 6px;
+   border: 1px solid rgba(0, 0, 0, 0.749);
+   color: #000;
+   transition: all ease-in .2s;
+   cursor: pointer;
+   font-size: .8em;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table tbody tr td label:hover{
+   color: #fff;
+   background-color: var(--primary);
+   border-color: var(--primary);
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .calendar-container .time-slot table tbody tr td input[type="radio"]:checked ~ label{
+   color: #fff;
+   background-color: var(--primary);
+   border-color: var(--primary);
+ }
+
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .form-button-next{
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   margin-top: 10px;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .form-button-next button{
+   font-size: 1em;
+   border: none;
+   padding: 5px 15px;
+   margin-left: 10px;
+   border-radius: 4px;
+   background-color: #bbbbbb;
+   color: #fff;
+   cursor: pointer;
+   transition: background ease-in-out .4s;
+   text-transform: capitalize;
+ }
+
+ main .container .appointment-details-container .appointment-detail form .set-schedule .form-button-next button#submit-btn{
+   background-color: var(--primary);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MODAL VIEWER */
+
+.view-appointment-container{
+   position: fixed;
+   z-index: 1;
+   background-color: rgba(0, 0, 0, 0.408);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   
+}
+
+
+.view-appointment-container .view-modal{
+   width: 50%;
+   /* height: 90%; */
+   /* min-height: 90%; */
+   max-height: 90%;
+   background-color: #fff;
+   border-radius: 8px;
+   border: 1px solid rgba(0,0,0,.2);
+   overflow: hidden;
+   overflow-y: scroll;
+   font-size: 1em;
+}
+
+.view-appointment-container .view-modal::-webkit-scrollbar{
+   display: none;
+}
+
+
+.view-appointment-container .view-modal .view-box{
+   width: 100%;
+   height: 100%;
+   
+   /* background-color: rebeccapurple; */
+}
+
+
+/* header */
+.view-appointment-container .view-modal .view-box .view-header{
+   padding: 2% 4%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.view-appointment-container .view-modal .view-box .view-header h3{
+   text-transform: uppercase;
+}
+
+.view-appointment-container .view-modal .view-box .view-header > div{
+   font-size: .9em;
+   color: #9f9f9f;
+   font-weight: 400;
+   letter-spacing: .5px;
+
+}
+
+.view-appointment-container .view-modal .view-box .view-header > div span{
+   color: #000;
+   font-weight: 500;
+}
+
+
+
+
+/* container */
+
+.view-appointment-container .view-modal .view-box .view-detail-container{
+   padding: 2% 4%;
+   width: 100%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   padding-bottom: 2%;
+   border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .details{
+   width: 70%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .details .detail{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .details .detail label{
+   color: #747474;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .details .detail .detail-label{
+   font-weight: 500;
+}
+
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .details .detail .detail-label.service-type{
+   background-color: var(--primary);
+   color: #fff;
+   padding: 1% 4%;
+   border-radius: 5em;
+}
+
+
+/* qr */
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .app-qr{
+   width: 30%;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .app-qr .qr-handler{
+   width: 150px;
+   height: 150px;
+   background-color: rgb(222, 222, 222);
+   position: relative;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .app-qr .qr-handler label{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   width: 80%;
+   color: #969696;
+   font-weight: 400;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .detail-container .app-qr .qr-handler img{
+   width: 100%;
+   height: 100%;
+   
+}
+
+
+
+
+.view-appointment-container .view-modal .view-box .view-detail-container .app-reason{
+   padding: 1% 0;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .app-reason .detail{
+   display: flex;
+   flex-direction: column;
+   
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .app-reason .detail label{
+   margin-bottom: 5px;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .app-reason .detail .detail-label textarea {
+   width: 100%;
+   padding: 1% 2%;
+   resize: none;
+   font-size: 1em;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .image-container{
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .image-container label{
+   margin-bottom: 10px;
+  
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .image-container .image-uploaded{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content:flex-start;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .image-container .image-uploaded .image-handler{
+   width: 120px;
+   height: 120px;
+   overflow: hidden;
+   margin-right: 5px;
+   margin-bottom: 5px;
+}
+
+.view-appointment-container .view-modal .view-box .view-detail-container .image-container .image-uploaded .image-handler img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+/* button */
+.view-appointment-container .view-modal .view-box .form-button-container{
+   width: 100%;
+   height: max-content;
+   padding: 2% 4%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-top: 1px solid rgba(0,0,0,.2);
+ 
+}
+
+.view-appointment-container .view-modal .view-box .form-button-container .form-button{
+   display: flex;
+   
+}
+
+.view-appointment-container .view-modal .view-box .form-button-container .form-button button{
+   font-size: 1em;
+   text-transform: capitalize;
+   color: #fff;
+   background-color: #b7b7b7;
+   border: none;
+   padding: 5px 12px;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: all ease-in-out .2s;
+   margin-left: 10px;
+}
+
+.view-appointment-container .view-modal .view-box .form-button-container .form-button button:hover{
+   background-color: #989898;
+}
+
+.view-appointment-container .view-modal .view-box .form-button-container .form-button button#yes-cancel{
+   background-color: var(--decline);
+}
+
+.view-appointment-container .view-modal .view-box .form-button-container .form-button button#yes-cancel:hover{
+   background-color: var(--hoverDecline);
+}
+
+
+/* appointment status */
+.view-appointment-container .view-modal .view-box .form-button-container .app-status{
+   display: flex;
+   align-items:center;
+}
+
+.view-appointment-container .view-modal .view-box .form-button-container .app-status p span{
+
+   padding: 5px 10px;
+   font-size: .9em;
+   border-radius: 4px;
+   color: #fff;
+   text-transform: capitalize;
+}
+
+
+
+
+
+
+/* cancel appointment */
+
+.view-appointment-container .view-modal .view-box.cancel-appointment{
+   position: relative;
+}
+
+.view-appointment-container .view-modal .view-box.cancel-appointment .view-header{
+   justify-content: center;
+   flex-direction: column;
+}
+
+.view-appointment-container .view-modal .view-box.cancel-appointment .view-header h3 span{
+   color: var(--decline);
+}
+
+.view-appointment-container .view-modal .view-box.cancel-appointment .form-button-container{
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.view-appointment-container .view-modal .view-box.cancel-appointment .view-header .icon-holder{
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   background-color: var(--decline);
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   margin-bottom: 5px;
+
+}  
+
+.view-appointment-container .view-modal .view-box.cancel-appointment .view-header .icon-holder .fas{
+   color: #fff;
+   font-size: 1.5em;
+}

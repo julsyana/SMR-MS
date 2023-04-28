@@ -1,0 +1,703 @@
+@import url("./main.css");
+
+/* filter */
+.medicine-container .filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.medicine-container .filter .sort {
+  width: 50%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+}
+.medicine-container .filter .sort label {
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+.medicine-container .filter .sort select {
+  padding: 5px 10px;
+  outline: none;
+  font-size: 1em;
+  border: none;
+  background-color: #e7e7e7;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.medicine-container .filter .search {
+  width: 50%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.medicine-container .filter .search input[type="search"] {
+  padding: 5px 10px;
+  outline: none;
+  font-size: 1em;
+  border: none;
+  background-color: #e7e7e7;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* table */
+
+.medicine-container .medicine-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.medicine-container .medicine-list-container {
+  width: 100%;
+  height: 100%;
+  height: max-content;
+  margin-top: 10px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.medicine-container .medicine-list-container table {
+  border-collapse: collapse;
+  width: 100%;
+  /* background-color: #fff; */
+
+  /* margin-bottom: 10px; */
+}
+.medicine-container .medicine-list-container table tbody {
+  /* display: flex;
+   flex-direction: column; */
+  /* display: grid; */
+}
+
+.medicine-container .medicine-list-container table tbody tr {
+  /* background-color: red; */
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  border-bottom: 1px solid #d6d6d6;
+  cursor: default;
+}
+
+.medicine-container .medicine-list-container table tbody tr:hover {
+  background-color: #d6d6d6;
+}
+
+.medicine-container .medicine-list-container table tbody tr td {
+  padding: 15px;
+  /* border: 1px solid red; */
+}
+
+.medicine-container .medicine-list-container table tbody tr td p {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.medicine-container .medicine-list-container table tbody tr td p span {
+  font-weight: 300;
+}
+
+.medicine-container .medicine-list-container table tbody tr td .med-img {
+  width: 120px;
+  height: 100px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.medicine-container .medicine-list-container table tbody tr td .med-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.medicine-container .medicine-list-container table tbody tr td .qr-image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.medicine-container .medicine-list-container table tbody tr td .qr-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.medicine-container .medicine-list-container table tbody tr td .med-desc p {
+  text-align: justify;
+  font-size: 0.9em;
+}
+
+.medicine-container .medicine-list-container table tbody tr td .action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  /* background-color: red; */
+}
+
+.medicine-container
+  .medicine-list-container
+  table
+  tbody
+  tr
+  td
+  .action-button
+  button {
+  border: none;
+  background: none;
+  font-size: 1.2em;
+  margin: 0 5px;
+  cursor: pointer;
+  color: var(--alertBgButton);
+}
+
+.medicine-container
+  .medicine-list-container
+  table
+  tbody
+  tr
+  td
+  .action-button
+  button:hover {
+  color: var(--hoverAlertButton);
+}
+
+.medicine-container
+  .medicine-list-container
+  table
+  tbody
+  tr
+  td
+  .action-button
+  button#med-edit {
+  color: var(--primaryBgButton);
+}
+
+.medicine-container
+  .medicine-list-container
+  table
+  tbody
+  tr
+  td
+  .action-button
+  button#med-edit:hover {
+  color: var(--hoverButton);
+}
+
+/* modals */
+.medicine-modal-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000070;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* add modal */
+
+.medicine-modal-container .add-med-container {
+  width: 40%;
+  height: max-content;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.medicine-modal-container .add-med-container .add-container-header {
+  padding: 4%;
+  text-align: center;
+  background-color: #e3e3e3;
+}
+
+.medicine-modal-container .add-med-container .add-container-header p {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.medicine-modal-container .add-med-container form {
+  padding: 4% 8%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.medicine-modal-container .add-med-container form .form-upload {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.medicine-modal-container .add-med-container form .form-upload label {
+  margin-bottom: 2px;
+  font-size: 0.9em;
+  color: #3e3e3e;
+}
+
+.medicine-modal-container .add-med-container form .form-upload input {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #0000001b;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.medicine-modal-container .add-med-container form .form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.medicine-modal-container .add-med-container form .form-input textarea,
+.form-input select {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #0000001b;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-transform: capitalize;
+  resize: none;
+}
+
+.medicine-modal-container .add-med-container form .form-input label {
+  margin-bottom: 2px;
+  font-size: 0.9em;
+  color: #3e3e3e;
+}
+
+.medicine-modal-container .add-med-container form .form-input input {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #0000001b;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.medicine-modal-container .add-med-container form .form-input input:focus {
+  border: 1px solid #2a48cb91;
+}
+
+.medicine-modal-container .add-med-container form .form-input input:read-only {
+  background-color: #bbbbbb;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+.medicine-modal-container
+  .add-med-container
+  form
+  .form-input
+  input#admin-email {
+  text-transform: lowercase;
+}
+
+.medicine-modal-container .add-med-container form .form-button {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.medicine-modal-container .add-med-container form .form-button button {
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #ababab;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.medicine-modal-container .add-med-container form .form-button button:hover {
+  background-color: #919191;
+}
+
+.medicine-modal-container .add-med-container form .form-button button#med-add {
+  background-color: var(--successBgButton);
+}
+
+.medicine-modal-container
+  .add-med-container
+  form
+  .form-button
+  button#med-add:hover {
+  background-color: var(--hoverSuccessButton);
+}
+
+/* edit modal */
+
+.medicine-modal-container .edit-medicine-container {
+  width: 40%;
+  height: max-content;
+  position: relative;
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.medicine-modal-container .edit-medicine-container .edit-container-header {
+  padding: 4%;
+  text-align: center;
+  background-color: #e3e3e3;
+}
+
+.medicine-modal-container .edit-medicine-container .edit-container-header p {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.medicine-modal-container .edit-medicine-container form {
+  padding: 4% 8%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.medicine-modal-container .edit-medicine-container form .form-input-disabled {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input-disabled
+  > div {
+  width: 50%;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input-disabled
+  > div.form-input
+  input {
+  margin-bottom: 5px;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input-disabled
+  > div.med-image {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input-disabled
+  > div.med-image
+  .img-handler {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(232, 232, 232);
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input-disabled
+  > div.med-image
+  .img-handler
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.medicine-modal-container .edit-medicine-container form .form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.medicine-modal-container .edit-medicine-container form .form-input label {
+  margin-bottom: 2px;
+  font-size: 0.9em;
+  color: #3e3e3e;
+}
+
+.medicine-modal-container .edit-medicine-container form .form-input input,
+.form-input textarea,
+.form-input select {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #00000030;
+  background-color: #e3e3e3;
+  border-radius: 4px;
+  text-transform: capitalize;
+  resize: none;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input
+  input:focus {
+  border: 1px solid #2a48cb91;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input
+  input:read-only {
+  background-color: #bbbbbb;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-input
+  input#admin-email {
+  text-transform: lowercase;
+}
+
+.medicine-modal-container .edit-medicine-container form .form-button {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.medicine-modal-container .edit-medicine-container form .form-button button {
+  padding: 8px 12px;
+  color: #fff;
+  background-color: #ababab;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-button
+  button:hover {
+  background-color: #919191;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-button
+  button#med-edit-upd {
+  background-color: var(--successBgButton);
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  form
+  .form-button
+  button#med-edit-upd:hover {
+  background-color: var(--hoverSuccessButton);
+}
+
+/* message modal */
+
+.medicine-message-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  /* background-color: #0000002f; */
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* message success */
+.medicine-message-modal .message-success {
+  margin-top: 2%;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2%;
+  border: 1px solid rgba(0, 0, 0, 0.237);
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+
+  width: 40%;
+
+  /* visibility: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-message-modal .message-success .icon {
+  margin-top: 10px;
+}
+
+.medicine-message-modal .message-success .icon .fas {
+  color: var(--successBgButton);
+  font-size: 5em;
+}
+
+.medicine-modal-container .edit-medicine-container .message-modal {
+  position: fixed;
+  /* width: 40%; */
+  height: max-content;
+  z-index: 1;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2%;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  .message-modal
+  .message-button
+  button {
+  padding: 10px 20px;
+  border: none;
+  background: var(--successBgButton);
+  color: #fff;
+  border-radius: 3px;
+  transition: all ease-out 0.2s;
+  cursor: pointer;
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  .message-modal
+  .message-button
+  button:hover {
+  background: var(--hoverSuccessButton);
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  .message-modal
+  .message-button
+  #close-med-modal {
+  background: var(--alertBgButton);
+}
+
+.medicine-modal-container
+  .edit-medicine-container
+  .message-modal
+  .message-button
+  #close-med-modal:hover {
+  background: var(--hoverAlertButton);
+}
+
+/* delete modal */
+
+.medicine-modal-container .del-medicine-container {
+  width: 40%;
+  height: max-content;
+  border-radius: 12px;
+  background-color: #fff;
+  position: relative;
+  align-self: flex-start;
+  margin-top: 5%;
+  padding-bottom: 2%;
+  padding-top: 4%;
+}
+
+.medicine-modal-container .del-medicine-container .del-icon {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* border: 5px solid rgb(17, 25, 48); */
+}
+
+.medicine-modal-container .del-medicine-container .del-icon .fas {
+  font-size: 2em;
+  color: var(--alertBgButton);
+}
+
+.medicine-modal-container .del-medicine-container .del-message {
+  /* background-color: rebeccapurple; */
+  text-align: center;
+}
+
+.medicine-modal-container .del-medicine-container .del-message h2 {
+  color: var(--primaryBgButton);
+}
+
+.medicine-modal-container .del-medicine-container .form-button {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-modal-container .del-medicine-container .form-button button {
+  padding: 8px 20px;
+  color: #fff;
+  background-color: #ababab;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.medicine-modal-container .del-medicine-container .form-button button:hover {
+  background-color: #919191;
+}
+
+.medicine-modal-container
+  .del-medicine-container
+  .form-button
+  button#hospi-del-y {
+  background-color: var(--alertBgButton);
+}
+
+.medicine-modal-container
+  .del-medicine-container
+  .form-button
+  button#hospi-del-y:hover {
+  background-color: var(--hoverAlertButton);
+}

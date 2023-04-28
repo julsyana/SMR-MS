@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Entrance Login</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-name">
+                <!-- <img src="/Admin/assets/QCU_Logo.png" alt=""> -->
+                <h3>Welcome to Quezon City University</h3>
+            </div>
+            <div class="time">
+               <h3>Jan 1, 2023 Sunday | 0:00</h3>
+            </div>
+        </div>
+        <div class="logo"><img src="/Admin/assets/QCU_Logo.png" alt="">
+        </div>
+        <div class="container">
+            <div class="content">
+              <h4>Login</h4>
+                <!-- <img src="/Admin/assets/QCU_Logo.png" alt=""> -->
+                <video id="preview" width="100%"></video>
+                    <form action="#" method="post" class="form-horizontal">
+                      <input type="text" name="uname" id="text" readonly="" placeholder="Scan QR code" class="form-control class" method="get" >
+                      
+                      <input type="text" name="uname" class="login-input" placeholder="Email">
+                      <input type="password" name="pass" class="login-input" placeholder="Password">
+                      <!-- <span><a href="">Forgot Password</a></span> -->
+                      <input type="submit" name="submit" value="Login" class="login-submit">
+                    </form> 
+            </div>
+              <!-- <div class="login-form">
+                <h1>Login</h1> 
+                <img src="/Admin/assets/QCU_Logo.png" alt="">
+                <div class="form">
+                    <form action="">
+                        
+                    </form>
+                </div>
+            </div> -->
+        </div>
+
+        <footer></footer>
+
+        <script>
+            let scanner = new Instascan.Scanner({ video:document.getElementById('preview')});
+            Instascan.Camera.getCameras().then(function(cameras){
+              if(cameras.length > 0){
+                scanner.start(cameras[0]);
+              }else{
+                alert("No cameras found!");
+              }
+            }).catch(function(e){
+              console.error(e);
+            });
+      
+            scanner.addListener('scan',function(c){
+              document.getElementById('text') .value=c;
+            //   document.forms[0].submit();
+            });
+          </script>
+    </body>
+</html>

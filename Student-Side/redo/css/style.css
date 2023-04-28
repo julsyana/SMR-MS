@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+:root{
+   --approve: #3BCD64;
+   --decline: #e04a4f;
+   --primary: #577CDC;
+
+   --hover: #415ea8;
+   --hoverApprove: #32b056;
+   --hoverDecline: #bf3e43;
+}
+
+
+*{
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;
+   box-sizing: border-box;
+}
+
+body{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   background-color: #F2F2F2;
+}
+
+
+
+ul li{
+   list-style: none;
+}
+
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+
+
+.side-panel{
+   background-color: #577CDC;
+   height: 100%;
+   width: 20%;
+   color: #fff;
+   font-size: 1rem;
+   padding: 2%;
+   display: flex;
+   flex-direction: column;
+}
+
+.side-panel .stud-profile{
+   width: 100%;
+   height: 30%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   margin-bottom: 10px;
+}
+
+.side-panel .stud-profile .stud-image{
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   overflow: hidden;
+   border: 5px solid white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.side-panel .stud-profile .stud-image img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+.side-panel .stud-profile .stud-info{
+
+   font-size: 1em;
+   text-align: center;
+
+}
+
+.side-panel .stud-profile .stud-info h3{
+   font-size: 1em;
+   text-transform: capitalize;
+}
+
+.side-panel .stud-profile .stud-info p{
+   font-size: 1em;
+   color: #ffffffa8;
+   word-break: break-all;
+}
+
+
+.side-panel .nav{
+   /* background-color: #a3a3bf; */
+   border-top: 1px solid #ffffff7e;
+
+}
+
+.side-panel .nav .sub-header{
+   font-size: .85em;
+   letter-spacing: 1.2px;
+   margin-top: 5px;
+   color: #ffffff8f;
+   text-transform: uppercase;
+
+}
+
+.side-panel .primary-nav ul{
+   margin: 5px 0;
+   
+}
+
+
+.side-panel .primary-nav ul li{
+   margin: 5px 0;
+   padding: 10px;
+   border-radius: 5px;
+   display: flex;
+   transition: background ease-in .4s;
+}
+
+.side-panel .primary-nav ul li:hover{
+   background-color: #415ea8;
+}
+
+
+.side-panel .primary-nav ul li a{
+   color: #ffffffc6;
+   width: 100%;
+   height: 100%;
+}
+
+
+
+
+.side-panel .secondary-nav ul{
+   margin: 5px 0;
+   
+}
+
+.side-panel .secondary-nav ul li{
+
+   padding: 10px;
+   border-radius: 5px;
+   display: flex;
+   transition: background ease-in .4s;
+}
+
+.side-panel .secondary-nav ul li:hover{
+   background-color: #415ea8;
+}
+
+
+.side-panel .secondary-nav ul li a{
+   color: #ffffffc6;
+   width: 100%;
+   height: 100%;
+}
+
+
+.side-panel .primary-nav ul li.selected{
+   background-color: #415ea8;
+}
+
+.side-panel .secondary-nav ul li.selected{
+   background-color: #415ea8;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MAIN  */
+
+main {
+   background-color: rgb(255, 255, 255);
+   height: 100%;
+   width: 80%;
+}
+
+main header{
+   background-color: #577CDC;
+   width: 100%;
+   height: 12%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   color: #fff;
+   font-size: 1em;
+}
+
+main header .logo{
+   width: 60px;
+   height: 60px;
+   overflow: hidden;
+   border-radius: 50%;
+   background-color: #fff;
+   margin-right: 10px;
+}
+
+main header .logo img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+main header .title h1{
+   letter-spacing: 1px;
+   font-size: 1.5em;
+}
+
+main .container::-webkit-scrollbar{
+   width: 10px;
+}
+
+/* Track */
+main .container::-webkit-scrollbar-track {
+   background: #c2cadc;
+ }
+ 
+ /* Handle */
+ main .container::-webkit-scrollbar-thumb {
+   background: #577CDC;
+   transition: background ease-in .4s;
+ }
+ 
+ /* Handle on hover */
+ main .container::-webkit-scrollbar-thumb:hover {
+   background: #415ea8;
+ }
+
+
+
+
+main .container{
+   overflow-y: scroll;
+   width: 100%;
+   height: 88%;
+   padding: 2% 4%;
+   background-color: #F2F2F2;
+}
+
+main .container .personal-details{
+   width: 100%;
+}
+
+main .container .personal-details hr{
+   margin: 10px 0 ;
+   border-color: rgba(0, 0, 0, 0.407);
+}
+
+main .container .personal-details h3{
+   margin-bottom: 10px;
+   font-weight: 500;
+   font-size: 1em;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: #0000007f;
+}
+
+
+
+
+
+/* Personal Information */
+
+main .container .personal-details .personal-info{
+   padding: 10px 0;
+}
+
+main .container .personal-details .personal-info .student-info{
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+  
+}
+
+main .container .personal-details .personal-info .student-info .details{
+   color: #0000007e;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+main .container .personal-details .personal-info .student-info .details .sub-header{
+   margin-bottom: 10px;
+   font-weight: 500;
+   font-size: 1em;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: #0000007f;
+}
+
+main .container .personal-details .personal-info .student-info .details h2{
+   color: #000;
+}
+
+main .container .personal-details .personal-info .student-info .details .medical-status{
+   /* background-color: #3BCD64; */
+   width: max-content;
+
+   color: #3BCD64;
+   font-size: 1em;
+   margin-top: 10px;
+   border-radius: 5px;
+   font-weight: 500;
+}
+
+main .container .personal-details .personal-info .student-info .details .status{
+   /* background-color: #3BCD64; */
+   width: max-content;
+   font-size: 1em;
+   font-weight: 500;
+}
+
+main .container .personal-details .personal-info .student-info .details .status span{
+   font-weight: 600;
+}
+
+main .container .personal-details .personal-info .student-info .details h3{
+   text-transform: capitalize;
+   color: #000;
+   margin: 0;
+}
+
+main .container .personal-details .personal-info .student-info .image{
+   width: 180px;
+   height: 180px;
+   overflow: hidden;
+   background-color: #577CDC;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+main .container .personal-details .personal-info .student-info .image img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+main .container .basic-information{
+   padding: 10px 0;
+}
+
+main .container .basic-information .form-input{
+   display: grid;
+   grid-template-columns: 4fr 4fr 4fr 4fr;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+
+main .container .basic-information .form-input .text-input{
+   display: flex;
+   flex-direction: column-reverse;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 5px;
+   width: 80%;
+}
+
+main .container .basic-information .form-input .text-input input{
+   font-size: .9em;
+   outline: none;
+   padding: 10px 12px;
+   border: none;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
+   width: 100%;
+   text-transform: capitalize;
+}
+
+main .container .basic-information .form-input .text-input input:read-only{
+   background-color: #cbcbcb;;
+   cursor: default;
+   color: #808080;
+}
+
+main .container .basic-information .form-input .text-input label{
+   font-size: .9em;
+   color: #00000078;
+   font-weight: 500;
+   margin-bottom: 5px;
+}
+
+
+
+
+
+main .container .emergency-contact{
+   padding: 10px 0;
+}
+
+main .container .emergency-contact .form-input{
+   display: grid;
+   grid-template-columns: 2fr 4fr;
+  
+}
+
+main .container .emergency-contact .form-input .text-input{
+   display: flex;
+   flex-direction: column-reverse;
+   align-items: flex-start;
+   justify-content: flex-start;
+   /* margin: 0 5px; */
+   width: 90%;
+   margin: 5px;
+   
+}
+
+main .container .emergency-contact .form-input .text-input input{
+   font-size: .9em;
+   outline: none;
+   padding: 10px 12px;
+   border: none;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
+   width: 100%;
+   text-transform: capitalize;
+
+}
+
+main .container .emergency-contact .form-input .text-input label{
+   font-size: .9em;
+   color: #00000078;
+   font-weight: 500;
+   margin-bottom: 5px;
+}
+
+
+
+main .container .emergency-contact .form-input .text-input input:read-only{
+   background-color: #cbcbcb;;
+   cursor: default;
+   color: #808080;
+}
+
+
+

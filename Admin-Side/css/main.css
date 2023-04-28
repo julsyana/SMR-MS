@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+   --primaryColor: #182039;
+   --secondaryColor: #13182C;
+
+   --primaryBgButton: #3E64FF;
+   --hoverButton: #375ae3;
+
+   --successBgButton: #5cd46e;
+   --hoverSuccessButton: #4cb05b;
+
+   --alertBgButton: #D42311;
+   --hoverAlertButton: #b4200f;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+   display: flex;
+   align-items: center;
+}
+
+/* side panel */
+.side-panel{
+   width: 16%;
+   height: 100vh;
+   overflow: hidden;
+   background-color: var(--secondaryColor);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+
+.side-panel .nav-header{
+   width: 100%;
+   height: 15%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 5%;
+   /* background-color: rebeccapurple; */
+   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+   
+}
+.side-panel .nav-header .img-logo{
+   margin-right: 5px;
+}
+
+.side-panel .nav-header .img-logo .img-handler{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   overflow: hidden;
+   background-color: rgb(255, 255, 255);
+}
+
+.side-panel .nav-header .img-logo .img-handler img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.side-panel .nav-header .title-logo{
+   font-size: .9em;
+   color: #fff;
+   font-weight: 500;
+   letter-spacing: 1px;
+}
+
+
+
+/* navigation links */
+
+.side-panel .primary-nav{
+   width: 100%;
+   height: 85%;
+}
+
+.side-panel .primary-nav ul{
+   width: 100%;
+   height: 100%;
+}
+
+.side-panel .primary-nav ul li{
+   list-style: none;
+   /* margin: 5px; */
+}
+
+.side-panel .primary-nav ul li a{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 12px 0;
+   padding-left: 20px;
+   color: #fff;
+   text-decoration: none;
+   font-size: .9em;
+   /* font-weight: 300; */
+   transition: all ease-in-out .2s;
+}
+
+.side-panel .primary-nav ul li a .fas{
+   margin-right: 10px;
+}
+
+.side-panel .primary-nav ul li a:hover{
+   background-color: #fff;
+   color: var(--primaryColor);
+}
+
+
+.side-panel .primary-nav ul li a.isSelected{
+   background-color: #f0f0f0;
+   color: #000000;
+}
+
+
+
+
+
+/* main */
+
+main{
+   width: calc(100% - 16%);
+   height: 100vh;
+   background-color: var(--primaryColor);
+   overflow: hidden;
+}
+
+
+main header{
+   width: 100%;
+   height: 10%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding: 0 3%;
+}
+
+main header .admin-profile{
+   height: max-content;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+main header .admin-profile .admin-text{
+   color: #fff;
+   font-size: 1em;
+}
+
+main header .admin-profile .profile{
+   /* overflow: hidden; */
+   display: flex;
+   align-items: center;
+   margin-left:  10px;
+   cursor: pointer;
+   position: relative;
+}
+
+main header .admin-profile .profile .img-handler{
+   width: 40px;
+   height: 40px;
+   overflow: hidden;
+   border-radius: 50%;
+   
+   border: 2px solid #5D8FD9
+}
+
+
+main header .admin-profile .profile .img-handler img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+main header .admin-profile .profile .icon{
+   margin-left: 5px;
+}
+
+main header .admin-profile .profile .icon .fas{
+   color: #5D8FD9;
+}
+
+
+main header .admin-profile .profile .acc-sub-menu{
+   background-color: rgb(42, 42, 42);
+   position: absolute;
+   width: max-content;
+   right: 0;
+   top: 120%;
+   display: none;
+}
+
+main header .admin-profile .profile .acc-sub-menu ul li{
+   list-style: none;
+   display: flex;
+   margin-bottom: 1px;
+}
+
+main header .admin-profile .profile .acc-sub-menu ul li a{
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 20px;
+   /* background-color: rebeccapurple; */
+   width: 100%;
+   text-align: right;
+   font-size: .9em;
+}
+
+main header .admin-profile .profile .acc-sub-menu ul li a:hover{
+   background-color:rgba(255, 255, 255, 0.307);
+}
+
+
+main .main-content{
+   width: 100%;
+   height: 90%;
+   overflow-y: scroll;
+
+}
+
+main .main-content::-webkit-scrollbar{
+   display: none;
+}
+
+main .main-content > div {
+   padding: 1% 3%;
+   width: 100%;
+}
+
+
+main .main-content > div .content-header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 10px;
+
+}
+
+main .main-content > div .content-header h3{
+   color: #fff;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+
+
+main .main-content > div .content-header button{
+   color: #fff;
+   background-color: var(--primaryBgButton);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 6px 12px;
+   font-size: 1em;
+   border-radius: 6px;
+   border: none;
+   text-transform: capitalize;
+   cursor: pointer;
+   transition: all ease-in-out;
+}
+
+main .main-content > div .content-header button .fas{
+   margin-right: 5px;
+}
+
+main .main-content > div .content-header button:hover{
+
+   background-color: var(--hoverButton);
+
+}

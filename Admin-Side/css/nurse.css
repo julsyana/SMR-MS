@@ -1,0 +1,750 @@
+@import url("./main.css");
+
+/* filter */
+.nurse-container .filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.nurse-container .filter .sort {
+  width: 50%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+}
+.nurse-container .filter .sort label {
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+.nurse-container .filter .sort select {
+  padding: 5px 10px;
+  outline: none;
+  font-size: 1em;
+  border: none;
+  background-color: #e7e7e7;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.nurse-container .filter .search {
+  width: 50%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nurse-container .filter .search input[type="search"] {
+  padding: 5px 10px;
+  outline: none;
+  font-size: 1em;
+  border: none;
+  background-color: #e7e7e7;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* card */
+.nurse-list-container .card_container {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr 4fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.nurse-list-container .card_container .card-holder {
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nurse-list-container .card_container .card-holder:hover {
+  outline: 3px solid var(--primaryBgButton);
+  box-shadow: 0 0px 7px 7px rgba(20, 67, 160, 0.531);
+}
+
+.nurse-list-container .card_container .card {
+  padding: 7px;
+  height: 400px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: black;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nurse-list-container .card_container .card:hover {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.nurse-list-container .card_container .card .image-holder {
+  width: 100%;
+  height: 72%;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.nurse-list-container .card_container .card .image-holder img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: contain;
+  /* border-radius: 8px;
+  margin-bottom: 6px; */
+}
+.nurse-list-container .card_container .card .card_content {
+  padding: 0 10px;
+  display: grid;
+}
+.nurse-list-container .card_container .card .card_content .stud_id {
+  font-weight: bold;
+}
+.nurse-list-container .card_container .card .card_content .name {
+  font-weight: 500;
+}
+.nurse-list-container .card_container .card .card_content .nurse {
+  color: #999;
+}
+.nurse-list-container .card_container .card .card_content .card_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nurse-list-container .card_container .card .card_content .card_footer .date {
+  font-size: 14px;
+  /* flex: 1; */
+  color: #5d8fd9ab;
+}
+
+.nurse-list-container
+  .card_container
+  .card
+  .card_content
+  .card_footer
+  .date
+  span {
+  background-color: #5d8fd9;
+  margin-right: 3px;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.nurse-list-container
+  .card_container
+  .card
+  .card_content
+  .card_footer
+  .form-button
+  a {
+  text-decoration: none;
+  color: var(--primaryBgButton);
+}
+
+.nurse-list-container
+  .card_container
+  .card
+  .card_content
+  .card_footer
+  .form-button
+  a:hover {
+  color: var(--hoverButton);
+}
+
+.nurse-list-container
+  .card_container
+  .card
+  .card_content
+  .card_footer
+  .form-button
+  button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--alertBgButton);
+}
+
+.nurse-list-container
+  .card_container
+  .card
+  .card_content
+  .card_footer
+  .form-button
+  button:hover {
+  color: var(--hoverAlertButton);
+}
+
+.nurse-list-container
+  .card_container
+  .card
+  .card_content
+  .card_footer
+  .form-button
+  .fas {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+/* view nurse */
+
+.nurse-container .link-header h3 {
+  cursor: default;
+  font-weight: 500;
+  color: #fff;
+}
+
+.nurse-container .link-header h3 span {
+  color: var(--primaryBgButton);
+}
+
+.nurse-container .link-header h3 a {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nurse-container .link-header h3 a:hover {
+  text-decoration: underline;
+}
+
+.nurse-container .view-nurse-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nurse-container .view-nurse-container > div {
+  border-top: 1px solid #ffffff42;
+  padding: 2% 0;
+}
+
+.nurse-container .view-nurse-container .nurse-information {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.nurse-container .view-nurse-container .nurse-information .nurse-profile {
+  margin-right: 50px;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .nurse-profile
+  .profile
+  .img-handler {
+  width: 250px;
+  height: 250px;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .nurse-profile
+  .profile
+  .img-handler
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .nurse-profile
+  .form-upload {
+  margin-top: 10px;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .nurse-profile
+  .form-upload
+  label {
+  border: 1px solid #5d8fd9;
+  color: #5d8fd9;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .nurse-profile
+  .form-upload
+  label:hover {
+  background-color: #5d8fd9;
+  color: #fff;
+}
+
+.nurse-container .view-nurse-container .nurse-information .personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
+  /* background-color: red; */
+}
+
+/* overall form input */
+
+.nurse-container .view-nurse-container .form-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nurse-container .view-nurse-container .form-input label {
+  color: #ffffffa3;
+  font-weight: 300;
+  width: max-content;
+}
+
+.nurse-container .view-nurse-container .form-input input {
+  width: 60%;
+  outline: none;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 3px;
+}
+
+.nurse-container .view-nurse-container .form-input input:read-only {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+/* xx overall form input */
+
+/* personal info */
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .personal-info
+  .form-input
+  .scheds {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .personal-info
+  .form-input
+  .scheds
+  .form-check {
+  width: max-content;
+  margin-right: 10px;
+}
+
+.nurse-container
+  .view-nurse-container
+  .nurse-information
+  .personal-info
+  .form-input
+  .scheds
+  label {
+  background-color: #5180c7;
+  padding: 5px 12px;
+  color: #fff;
+  border-radius: 3px;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+/* basic info */
+.nurse-container .view-nurse-container .basic-info {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr 4fr;
+  justify-content: space-between;
+}
+
+.nurse-container .view-nurse-container .basic-info .form-input {
+  flex-direction: column-reverse;
+  margin: 10px;
+}
+
+.nurse-container .view-nurse-container .basic-info .form-input input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* contact info */
+.nurse-container .view-nurse-container .contact-info {
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+  justify-content: space-between;
+}
+
+.nurse-container .view-nurse-container .contact-info .form-input {
+  flex-direction: column-reverse;
+  margin: 10px;
+}
+
+.nurse-container .view-nurse-container .contact-info .form-input input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* contact info */
+.nurse-container .view-nurse-container .emergency-contact {
+  display: grid;
+  grid-template-columns: 20% 20% 40% 20%;
+  justify-content: space-between;
+}
+
+.nurse-container .view-nurse-container .emergency-contact .form-input {
+  flex-direction: column-reverse;
+  margin: 10px;
+}
+
+.nurse-container .view-nurse-container .emergency-contact .form-input input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* modals */
+.nurse-modal-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000070;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* add modal */
+
+.nurse-modal-container .add-admin-container {
+  width: 40%;
+  height: max-content;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.nurse-modal-container .add-admin-container .add-container-header {
+  padding: 4%;
+  text-align: center;
+  background-color: #e3e3e3;
+}
+
+.nurse-modal-container .add-admin-container .add-container-header p {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nurse-modal-container .add-admin-container form {
+  padding: 4% 8%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.nurse-modal-container .add-admin-container form .form-upload {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.nurse-modal-container .add-admin-container form .form-upload label {
+  margin-bottom: 2px;
+  font-size: 0.9em;
+  color: #3e3e3e;
+}
+
+.nurse-modal-container .add-admin-container form .form-upload input {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #0000001b;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.nurse-modal-container .add-admin-container form .form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.nurse-modal-container .add-admin-container form .form-input label {
+  margin-bottom: 2px;
+  font-size: 0.9em;
+  color: #3e3e3e;
+}
+
+.nurse-modal-container .add-admin-container form .form-input input {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #0000001b;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  /* text-transform: capitalize; */
+}
+
+.nurse-modal-container .add-admin-container form .form-input input:focus {
+  border: 1px solid #2a48cb91;
+}
+
+.nurse-modal-container .add-admin-container form .form-input input:read-only {
+  background-color: #bbbbbb;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+.nurse-modal-container .add-admin-container form .form-input input#admin-email {
+  text-transform: lowercase;
+}
+
+.nurse-modal-container .add-admin-container form .form-button {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nurse-modal-container .add-admin-container form .form-button button {
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #ababab;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.nurse-modal-container .add-admin-container form .form-button button:hover {
+  background-color: #919191;
+}
+
+.nurse-modal-container .add-admin-container form .form-button button#nurse-add {
+  background-color: var(--successBgButton);
+}
+
+.nurse-modal-container
+  .add-admin-container
+  form
+  .form-button
+  button#nurse-add:hover {
+  background-color: var(--hoverSuccessButton);
+}
+
+.nurse-modal-container .add-admin-container form .form-input .scheds {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 10px;
+  /* flex-wrap: wrap; */
+}
+
+.nurse-modal-container
+  .add-admin-container
+  form
+  .form-input
+  .scheds
+  .form-check
+  input {
+  display: none;
+}
+
+.nurse-modal-container
+  .add-admin-container
+  form
+  .form-input
+  .scheds
+  .form-check
+  label {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primaryBgButton);
+  color: var(--primaryBgButton);
+  padding: 5px 10px;
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+}
+
+.nurse-modal-container
+  .add-admin-container
+  form
+  .form-input
+  .scheds
+  .form-check
+  label:hover {
+  background-color: var(--primaryBgButton);
+  color: #fff;
+}
+
+.nurse-modal-container
+  .add-admin-container
+  form
+  .form-input
+  .scheds
+  .form-check
+  input[type="checkbox"]:checked
+  ~ label {
+  background-color: var(--primaryBgButton);
+  color: #fff;
+}
+
+.nurse-modal-container .add-admin-container form .form-input select {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  outline: none;
+  border: 1px solid #0000001b;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.nurse-message-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+  /* background-color: #0000002f; */
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* delete modal */
+
+.nurse-modal-container .del-admin-container {
+  width: 40%;
+  height: max-content;
+  border-radius: 12px;
+  background-color: #fff;
+  position: relative;
+  align-self: flex-start;
+  margin-top: 5%;
+  padding-bottom: 2%;
+  padding-top: 4%;
+}
+
+.nurse-modal-container .del-admin-container .del-icon {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* border: 5px solid rgb(17, 25, 48); */
+}
+
+.nurse-modal-container .del-admin-container .del-icon .fas {
+  font-size: 2em;
+  color: var(--alertBgButton);
+}
+
+.nurse-modal-container .del-admin-container .del-message {
+  /* background-color: rebeccapurple; */
+  text-align: center;
+}
+
+.nurse-modal-container .del-admin-container .del-message h2 {
+  color: var(--primaryBgButton);
+}
+
+.nurse-modal-container .del-admin-container .form-button {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nurse-modal-container .del-admin-container .form-button button {
+  padding: 8px 20px;
+  color: #fff;
+  background-color: #ababab;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.nurse-modal-container .del-admin-container .form-button button:hover {
+  background-color: #919191;
+}
+
+.nurse-modal-container .del-admin-container .form-button button#nurse-del-y {
+  background-color: var(--alertBgButton);
+}
+
+.nurse-modal-container
+  .del-admin-container
+  .form-button
+  button#nurse-del-y:hover {
+  background-color: var(--hoverAlertButton);
+}
+
+/* message success */
+.nurse-message-modal .message-success {
+  margin-top: 2%;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2%;
+  border: 1px solid rgba(0, 0, 0, 0.237);
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 40%;
+
+  /* visibility: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nurse-message-modal .message-success .icon {
+  margin-top: 10px;
+}
+
+.nurse-message-modal .message-success .icon .fas {
+  color: var(--successBgButton);
+  font-size: 5em;
+}

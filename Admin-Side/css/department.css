@@ -1,0 +1,480 @@
+@import url("./main.css");
+
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+
+/* card */
+.dept-list-container .card_container {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  gap: 40px;
+  margin-top: 20px;
+  /* background-color: rebeccapurple; */
+}
+
+.dept-list-container .card {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  cursor: default;
+}
+ 
+.dept-list-container .card .card_header {
+  color: white;
+  font-weight: bold;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dept-list-container .card .card_header .actions .action-button button{
+  border: none;
+  background: none;
+  font-size: 1.2em;
+  margin: 0 5px;
+  cursor: pointer;
+  color: var(--alertBgButton);
+ 
+}
+
+
+
+.dept-list-container .card .card_header .actions .action-button button:hover{
+ color: var(--hoverAlertButton);
+}
+
+.dept-list-container .card .card_header .actions .action-button button#dept-edit{
+ color: var(--primaryBgButton);
+}
+
+.dept-list-container .card .card_header .actions .action-button button#dept-edit:hover{
+ color: var(--hoverButton);
+}
+
+.dept-list-container .card .department_name {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #7696ff;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.dept-list-container .nurse {
+  font-size: 15px;
+}
+
+.dept-list-container .position {
+  background-color: lightgrey;
+  margin: auto;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dept-list-container .room_info {
+  padding-left: 30px;
+  text-align: start;
+}
+
+.dept-list-container .card_container .card {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  /* cursor: pointer; */
+  transition: 0.3s ease;
+}
+
+.dept-list-container .card_container .card:hover {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.dept-list-container .profile_img {
+  display: flex;
+  justify-content: center;
+}
+
+.dept-list-container .card_container .card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  margin-bottom: 6px;
+  object-fit: cover;
+}
+.dept-list-container .card_container .card .card_content {
+  padding: 0 10px;
+  display: grid;
+}
+.dept-list-container .card_container .card .card_content .stud_id {
+  font-weight: bold;
+}
+.dept-list-container .card_container .card .card_content .name {
+  font-weight: 500;
+}
+.dept-list-container .card_container .card .card_content .nurse {
+  color: #999;
+}
+.dept-list-container .card_container .card .card_content .card_footer {
+  display: flex;
+  align-items: center;
+}
+.dept-list-container .card_container .card .card_content .card_footer .date {
+  color: #5d8fd9;
+  font-size: 14px;
+  flex: 1;
+}
+.dept-list-container .card_container .card .card_content .card_footer i {
+  margin-left: 8px;
+  font-size: 20px;
+}
+.dept-list-container .card_container .card .card_content .card_footer i:nth-child(2) {
+  color: #999;
+}
+.dept-list-container .card_container .card .card_content .card_footer i:nth-child(3) {
+  color: #5180c7;
+  transform: translate(0, -1px);
+}
+
+
+
+
+
+
+
+
+
+
+/* modal */
+
+.dept-container .modal-dept-container{
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  background-color: #0005;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.dept-container .modal-dept-container .add-dept-container{
+  width: 40%;
+  height: max-content;
+  min-height: 80%;
+  max-height: 95%;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.279);
+  overflow-y: scroll;
+  
+}
+
+.dept-container .modal-dept-container .add-dept-container .dept-header{
+  height: 8%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primaryColor);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.152);
+}
+
+.dept-container .modal-dept-container .add-dept-container .dept-header h3{
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.dept-container .modal-dept-container .add-dept-container form{
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 100%;
+  padding: 2% 5%;
+  padding-bottom: 5%;
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-upload{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-upload label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* background-color: #fff; */
+  border: 1px solid var(--primaryColor);
+  color: var(--primaryColor);
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+  overflow: hidden;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-upload label img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-upload label:hover{
+  background-color: rgba(181, 181, 181, 0.372);
+  
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-upload label span{
+  font-size: .8em;
+  /* color: #fff; */
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-input{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .building-room{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .building-room > .form-input{
+  width: 32%;
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-input label{
+  color: rgba(0, 0, 0, 0.73);
+  font-size: .9em;
+  margin-bottom: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-indent: 5px;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-input select, .add-dept-container form .form-input input{
+  background: none;
+  outline: none;
+  border: 1px solid #c2c2c2;
+  padding: 4px 8px;
+  color: #000000;
+  border-radius: 2px;
+  /* font-size: .9em; */
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-input select:focus, .add-dept-container form .form-input input:focus{
+  outline: 1px solid var(--primaryBgButton);
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-input select{
+  background: #e5e5e5;
+  color: #000;
+  border: 1px solid #c2c2c2;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-input select option{
+
+  background: none;
+  color: #000;
+
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-input input:read-only{
+  background-color: #d4d4d4;
+  cursor: default;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-input input::placeholder{
+  color: #0000007e;
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-button{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-button button{
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 1em;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  background-color: #969696;
+  transition: all ease-in-out .2s;
+  cursor: pointer;
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-button button:hover{
+  background-color: #797979;
+}
+
+
+.dept-container .modal-dept-container .add-dept-container form .form-button button#add-dept-btn{
+  background-color: var(--successBgButton);
+}
+
+.dept-container .modal-dept-container .add-dept-container form .form-button button#add-dept-btn:hover{
+  background-color: var(--hoverSuccessButton);
+}
+
+
+
+
+
+
+
+
+/* message modal */
+
+.dept-message-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  /* background-color: #0000002f; */
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+}
+
+
+/* message success */
+.dept-message-modal .message-success{
+  margin-top: 2%;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2%;
+  border: 1px solid rgba(0, 0, 0, 0.237);
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+
+  width: 40%;
+  
+  /* visibility: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dept-message-modal .message-success .icon{
+  margin-top: 10px;
+}
+
+.dept-message-modal .message-success .icon .fas{
+  color: var(--successBgButton);
+  font-size: 5em;
+}
+
+
+
+
+
+
+
+
+
+/* delete modal */
+
+.modal-dept-container .del-dept-container{
+  width: 40%;
+  height: max-content;
+  border-radius: 12px;
+  background-color: #fff;
+  position: relative;
+  align-self: flex-start;
+  margin-top: 5%;
+  padding-bottom: 2%;
+  padding-top: 4%;
+}
+
+.modal-dept-container .del-dept-container .del-icon{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* border: 5px solid rgb(17, 25, 48); */
+}
+
+.modal-dept-container .del-dept-container .del-icon .fas{
+  font-size: 2em;
+  color: var(--alertBgButton);
+  
+}
+
+.modal-dept-container .del-dept-container .del-message{
+  /* background-color: rebeccapurple; */
+  text-align: center;
+}
+
+.modal-dept-container .del-dept-container .del-message h2{
+  color: var(--primaryBgButton)
+}
+
+.modal-dept-container .del-dept-container .form-button{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-dept-container .del-dept-container .form-button button{
+  padding: 8px 20px;
+  color: #fff;
+  background-color: #ababab;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all ease-in .2s;
+}
+
+.modal-dept-container .del-dept-container .form-button button:hover{
+  background-color: #919191;
+}
+
+.modal-dept-container .del-dept-container .form-button button#dept-del-y{
+  background-color: var(--alertBgButton);
+}
+
+.modal-dept-container .del-dept-container .form-button button#dept-del-y:hover{
+  background-color: var(--hoverAlertButton);
+}

@@ -1,0 +1,145 @@
+@import url("./style.css");
+
+.manage-account{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.manage-account form {
+   position: relative;
+   background-color: #fff;
+   width: 60%;
+   height: max-content;
+   /* height: max-content; */
+   padding: 4%;
+   padding-bottom: 3%;
+   padding-top: 6%;
+   border-radius: 8px;
+   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.226);
+}
+
+
+.manage-account form .form-image{
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: max-content;
+   height: max-content;
+   /* background-color: honeydew; */
+   width: 120px;
+   height: 120px;
+}
+
+.manage-account form .form-image .image-handler{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+   overflow: hidden;
+   border: 10px solid #f2f2f2;
+
+}
+
+.manage-account form .form-image .image-handler .img-overlay{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.426);
+}
+
+.manage-account form .form-image .image-handler img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.manage-account form .form-image label{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.manage-account form .form-image label .fa{
+   font-size: 2em;
+   color: #ffffff89;
+   transition: all ease-in-out .4s;
+   cursor: pointer;
+}
+
+.manage-account form .form-image label .fa:hover{
+   color: #fff;
+}
+
+
+.manage-account form .form-input{
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 10px;
+}
+
+.manage-account form .form-input label{
+   font-size: 1em;
+   font-weight: 500;
+   margin-bottom: 4px;
+}
+
+.manage-account form .form-input input{
+   font-size: 1em;
+   padding: 5px 10px;
+   outline: none;
+   border: 1px solid rgba(0, 0, 0, 0.37);
+   border-radius: 4px;
+}
+
+.manage-account form .form-input input:read-only{
+   background-color: #f2f2f2;
+   color: #5b5b5b;
+   cursor: default;
+}
+
+.manage-account form .form-input input:focus{
+   border-color: var(--primary);
+   border-width: 2px;
+}
+
+
+.manage-account form .form-button{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 10px;
+}
+
+
+.manage-account form .form-button .validation-message span{
+   padding: 5px 10px;
+   width: max-content;
+   color: #fff;
+   border-radius: 3px;
+   font-size: .9em;
+   font-weight: 300;
+}
+
+
+.manage-account form .form-button input{
+   background-color: var(--primary);
+   color: #fff;
+   padding: 5px 10px;
+   font-size: 1em;
+   border-radius: 6px;
+   border: none;
+   cursor: pointer;
+   transition: all ease-in-out .4s;
+}
+
+.manage-account form .form-button input:hover{
+   background-color: var(--hover);
+}

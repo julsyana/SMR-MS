@@ -1,0 +1,53 @@
+@import url("./style.css");
+
+main .container .medical-requirements{
+   /* background-color: aqua; */
+}
+
+main .container .medical-requirements h3{
+   text-transform: uppercase;
+   margin-bottom: 10px;
+}
+
+main .container .medical-requirements table{
+   width: 100%;
+   border-collapse: collapse;
+   background-color: #fff;
+   border-radius: 6px;
+   overflow: hidden;
+   box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
+}
+
+main .container .medical-requirements table thead{
+   border-bottom: 1px solid black;
+}
+
+main .container .medical-requirements table thead tr th{
+   padding: 10px 5px;
+   font-weight: 400;
+   color: #8d8d8d;
+}
+
+main .container .medical-requirements table tbody tr td{
+   text-align: center;
+   padding: 15px 5px;
+   font-size: 1em;
+}
+
+main .container .medical-requirements table tbody tr td .status{
+   text-transform: capitalize;
+   background-color: #c4c4c4;
+   color: #fff;
+   border-radius: 5em;
+   padding: 5px;
+   font-size: .9em;
+}
+
+
+main .container .medical-requirements table tbody tr td .file-link a{
+   color: var(--hover);
+}
+
+main .container .medical-requirements table tbody tr td .file-link a:hover{
+   text-decoration: underline;
+}

@@ -1,0 +1,179 @@
+@import url("./main.css");
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-container .content-header {
+  height: 10%;
+}
+
+.report-container .content-header #year-report{
+  display: none;
+}
+
+.report-container .content-header .form-button select,
+.content-header .form-button input {
+  padding: 5px 10px;
+  outline: none;
+  font-size: 1em;
+  border: none;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-left: 5px;
+  /* width: 20%; */
+}
+
+
+
+
+.report-container .report-content-container {
+  /* display: flex; */
+  background-color: #fff;
+  width: 100%;
+  height: 90%;
+  padding: 1% 2%;
+  overflow: hidden;
+}
+
+
+
+
+.report-container .report-content-container .report-box{
+  /* background-color: aliceblue; */
+  /* padding: 2px; */
+  width: 100%;
+  height: 100%;
+ 
+
+}
+
+
+.report-container .report-content-container .report-box .report-header{
+  text-align: center;
+  text-transform: uppercase;
+  color: #2282DC;
+}
+
+.report-container .report-content-container .report-box .graphical-data{
+  display: grid;
+  grid-template-columns: 55% auto;
+  grid-gap: 50px;
+  margin-bottom: 10px;
+}
+
+.report-container .report-content-container .report-box .graphical-data .graph{
+  display: grid;
+  grid-template-rows: 10% auto;
+  width: 100%;
+  height: max-content;
+ 
+  
+}
+
+.report-container .report-content-container .report-box .graphical-data .graph .line-graph{
+  background-color: #fff;
+  width: 100%;
+  height: 280px;
+}
+
+
+.report-container .report-content-container .report-box .graphical-data .graph .pie-chart{
+  background-color: #fff;
+  width: 100%;
+  height: 280px;
+}
+
+.report-container .report-content-container .report-box .graphical-data .graph .graph-title h3{
+  text-transform: capitalize;
+  font-size: 1em;
+
+}
+
+
+.report-container .report-content-container .report-box .list-of-data-tbl{
+  /* background-color: #b55c5c; */
+}
+
+.report-container .report-content-container .report-box .list-of-data-tbl table{
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.report-container .report-content-container .report-box .list-of-data-tbl table thead th{
+  padding: 5px;
+  background-color: #E9E9E9;
+  font-size: .7em;
+  font-weight: 600;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.report-container .report-content-container .report-box .list-of-data-tbl table tbody tr td{
+  /* border-bottom: 1px solid #E9E9E9; */
+  padding: 20px 5px;
+  font-size: .7em;
+  text-align: center;
+}
+
+.report-container .report-content-container .report-box .list-of-data-tbl table tbody tr:hover{
+  background-color: #E9E9E9;
+  cursor: default;
+}
+
+.report-container .report-content-container .report-box .list-of-data-tbl table tbody tr:nth-child(even){
+  background-color: #E9E9E9;
+}
+
+
+.report-container .form-button{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+  color: #000;
+}
+
+.report-container .form-button button{
+  margin: 0 10px;
+  font-size: 1em;
+  background-color: var(--primaryBgButton);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all ease-out .2s;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.report-container .form-button button:hover{
+  background-color: var(--hoverButton);
+}
+
+.report-container .form-button a{
+  color: #000;
+  padding: 5px 10px;
+  transition: all ease-out .2s;
+}
+
+.report-container .form-button a:hover{
+  color: var(--primaryBgButton);
+}
+
+
+
+
+
+
+/* print */
+
+@media print{
+  body{
+    display: none;
+  }
+
+  .report-box{
+    display: flex;
+  }
+}

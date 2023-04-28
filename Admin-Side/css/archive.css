@@ -1,0 +1,219 @@
+@import url("./main.css");
+
+
+.archive-container .content-header .filter{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 50%;
+}
+
+.archive-container .content-header .filter .sort{
+   /* background-color: red; */
+   width: 100%;
+   display: flex;
+   align-items: center;
+   margin-right: 5px;
+}
+
+.archive-container .content-header .filter .sort label{
+   font-size: .9em;
+   margin-right: 5px;
+   color: #fff;
+   width: 40%;
+}
+
+.archive-container .content-header .filter .sort select{
+   padding: 5px 10px;
+   outline: none;
+   font-size: 1em;
+   border: none;
+   background-color: #e7e7e7;
+   border-radius: 4px;
+   width: 100%;
+}
+
+.archive-container .content-header .filter .search{
+   width: 100%;
+   /* background-color: red; */
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.archive-container .content-header .filter .search input[type="search"]{
+   padding: 5px 10px;
+   outline: none;
+   font-size: 1em;
+   border: none;
+   background-color: #e7e7e7;
+   border-radius: 4px;
+   width: 100%;
+}
+
+
+
+
+
+/* table */
+
+.archive-container .archive-list-container{
+   width: 100%;
+   height: 100%;
+   height: max-content;
+   margin-top: 10px;
+   overflow: hidden;
+   /* overflow-x: scroll; */
+}
+
+.archive-container .archive-list-container table{
+   border-collapse: collapse;
+   width: 100%;
+}
+
+
+.archive-container .archive-list-container table thead tr th{
+   color: #fff;
+   text-align: center;
+   font-weight: 500;
+   padding: 10px;
+}
+
+.archive-container .archive-list-container table tbody{
+   display: flex;
+   flex-direction: column;
+}
+
+.archive-container .archive-list-container table tbody tr{
+   margin-bottom: 10px;
+   background-color: #fff;
+   border-radius: 4px;
+}
+
+.archive-container .archive-list-container table tbody tr td{
+   padding: 10px;
+   text-align: center;
+   text-transform: capitalize;
+}
+
+.archive-container .archive-list-container table tbody tr td .archive-img{
+   width: 70px;
+   height: 70px;
+   overflow: hidden;
+   background-color: #e7e7e7;
+   margin: auto;
+}
+
+.archive-container .archive-list-container table tbody tr td .archive-img img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+.archive-container .archive-list-container table tbody tr td .action-button{
+   margin: auto;
+   /* background-color: red; */
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.archive-container .archive-list-container table tbody tr td .action-button button{
+   border: none;
+   background: none;
+   font-size: 1.2em;
+   margin: 0 5px;
+   cursor: pointer;
+   color: var(--alertBgButton);
+}
+
+.archive-container .archive-list-container table tbody tr td .action-button button:hover{
+   color: var(--hoverAlertButton);
+}
+
+.archive-container .archive-list-container table tbody tr td .action-button button#arch-restore{
+   color: var(--primaryBgButton);
+}
+
+.archive-container .archive-list-container table tbody tr td .action-button button#arch-restore:hover{
+   color: var(--hoverButton);
+}
+
+
+
+
+
+
+
+
+
+/* are you sure you want... modal */
+
+.archive-message-modal{
+   position: fixed;
+   top: 0;
+   left: 0;
+
+   width: 100%;
+   height: 100%;
+   /* background-color: #0000002f; */
+
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+.archive-message-modal .message-modal{
+   margin-top: 2%;
+   background-color: #fff;
+   border-radius: 4px;
+   padding: 2%;
+   border: 1px solid rgba(0, 0, 0, 0.237);
+   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+
+   width: 40%;
+   
+   /* visibility: none; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.archive-message-modal .message-modal .icon{
+   margin-bottom: 10px;
+}
+
+.archive-message-modal .message-modal .icon .fas{
+   color: #dad873;
+   font-size: 4em;
+}
+
+
+.archive-message-modal .message-modal h2{
+   color: var(--primaryBgButton);
+}
+
+.archive-message-modal .message-modal .form-button{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   margin-top: 10px;
+}
+
+.archive-message-modal .message-modal .form-button button{
+   padding: 8px 20px;
+   color: #fff;
+   background-color: #ababab;
+   border: none;
+   border-radius: 4px;
+   margin-left: 5px;
+   font-size: 1em;
+   cursor: pointer;
+   transition: all ease-in .2s;
+}
+
+.archive-message-modal .message-modal .form-button button#yes-archive{
+   background-color: var(--primaryBgButton);
+}

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+body {
+	background: #182039;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+*{
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+form {
+	width: 500px;
+	padding: 0px;
+	background: #1E2745;
+	
+}
+form h2{
+	color: #dddddd;
+}
+form .header_login{
+	background: #13182C;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+}
+form .header_login img{
+	height: 50px;
+	width: auto;
+	margin-right: 73px;
+}
+form .input_wrapper{
+	padding: 20px;
+}
+/* h2 {
+} */
+
+input {
+	display: block;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #b9b9b9;
+	width: 100%;
+	padding: 5px;
+	margin: 5px auto;
+    font-size: 15px;
+	background: none;
+	color: #ffffff;
+    
+}
+input::placeholder {
+	color: #ffffff;
+	opacity: 1; /* Firefox */
+  }
+label {
+	color: black;
+	font-size: 18px;
+	/* padding: 10px; */
+}
+.button_wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.button_wrapper a{
+	color: rgb(203 203 255);	
+}
+button {
+	float: right;
+	background: #13182C;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+	font-size: 19px;
+	width: 150px;
+}
+a{
+	color: rgb(203 203 255);
+	font-size: 14px;
+}
+button:hover{
+	opacity: .7;
+}
+
+.success {
+	background: #D4EDDA;
+	color: #40754C;
+	padding: 10px;
+	width: 95%;
+	border-radius: 5px;
+	margin: 20px auto;
+ }
+ 
+.error {
+   background: #F2DEDE;
+   color: #A94442;
+   padding: 10px;
+   width: 100%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+}
+
+p{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+a {
+	display: inline-block;
+	color: #444;
+	text-decoration: none;
+	font-size: 14px;
+}
+a:hover{
+	text-decoration: underline;
+}
+

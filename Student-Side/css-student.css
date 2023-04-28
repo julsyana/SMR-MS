@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/* body{
+    background-color: #dedede;
+}
+.header{
+    background-color: #577CDC;
+    display: flex;
+    justify-content: start;
+    padding: 10px 40px;
+}
+.header img{
+    width: 75px;
+}
+.header h2{
+    place-self: center;
+    color: #fff;
+    margin: 0 20px;
+} */
+.container{
+    /* background-color: aqua; */
+    min-height: 100vh;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.form{
+    width: 50%;
+    background-color: #fff;
+    border-radius: 5px;    
+}
+.form form{
+    padding: 40px;
+}
+.form input[type="text"], .form input[type="submit"]{
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+.form input[type="text"]{
+    font-size: 30px;
+    background-color: #dedede;
+    border: none;
+}
+.form input[type="submit"]{
+    padding: 15px;
+    border: none;
+    background-color: #577CDC;
+    color: #fff;
+    font-weight: 600;
+}
+/* reg form */
+.reg-container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.reg-form{
+    width: 75%;
+    background-color: #dedede;  
+}
+.reg-form ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.reg-form ul li{
+    border: none;   
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.reg-form .tabPanel{
+    display: none;
+    padding: 20px;
+    margin: 10px 0;
+}
+.reg-form input[type=submit]{
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    float: right;
+    color: white;
+    font-weight: 600;
+    background-color: #577CDC;
+    border: none;
+    border-radius: 5px;
+}
+/* Basic Information */
+.basic-info form{
+    display: flex;
+    justify-content: space-around;
+}
+.basic-info .a-left, .basic-info .a-right{
+    display: grid;
+    place-items: center;
+    margin: 10px;
+}
+.basic-info .a-left input[type=text], .basic-info .a-right input[type=text]{
+    width: 100%;
+    margin: 5px;
+    font-size: 20px;
+}
+.basic-info .a-left .sample-img{
+    width: 100px;
+    background-color: tomato;
+    aspect-ratio: 1/1;
+}
+/* Medical History */
+.med-his form{
+    display: flex;
+    justify-content: space-around;
+}
+.med-his .form-left{
+    /* background-color: #542544; */
+    display: grid;
+    place-items: start;
+}
+.med-his .form-left label{
+    width: 100%;
+}
+/* .med-his .form-right{
+    background-color: #438798;
+} */
+.med-his .form-right{
+    display: grid;
+    place-items: start;
+}
+/* Medical Requirements */
+.tabPanel h3{
+    margin: 2em 0;
+    color: #ffffff;
+}
+.med-req label{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #dedede;
+    display: block;
+    margin: 10px 0 0 0;
+    color: #363636;
+    border-radius: 5px;
+}
+.tabPanel img{
+    width: 25px;
+    float: right;
+}
+.tabPanel input[type=file]{
+    display: none;
+}
+.med-req p{
+    color: yellow;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+}
+.tabPanel input[type=submit]{
+    padding: 10px;
+    place-self: end;
+}

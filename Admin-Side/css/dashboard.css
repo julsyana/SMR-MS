@@ -1,0 +1,150 @@
+@import url("./main.css");
+
+
+
+/* count */
+.dashboard .card-count{
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   /* background-color: red; */
+   height: max-content;
+   width: 100%;
+}
+
+.dashboard .card-count .card{
+   /* background-color: aqua; */
+   width: 19%;
+   height: 100px;
+   color: #fff;
+   border-radius: 4px;
+   overflow: hidden;
+}
+
+.dashboard .card-count .card .card-header{
+   width: 100%;
+   height: 40%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* border-bottom: 1px solid black; */
+   background-color: #D42311;
+   /* border-radius: 4px; */
+}
+
+.dashboard .card-count .card .card-header .fas{
+   margin-right: 10px;
+   font-size: 1.1em;
+}
+
+.dashboard .card-count .card .card-number{
+   width: 100%;
+   height: 60%;
+   background-color: #E74C3C;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+
+/* charts */
+.dashboard .chart_container {
+   display: grid;
+   grid-template-columns: 74% auto;
+   gap: 10px;
+   /* background-color: red; */
+   margin-top: 10px;
+ }
+ 
+ .dashboard .chart {
+   width: 100% !important;
+   height: 100% !important;
+ }
+ 
+ .dashboard .circle_chart {
+   width: 100% !important;
+   height: 100% !important;
+ }
+ 
+ .dashboard .chart_container .card_content {
+   background-color: white;
+   border-radius: 6px;
+   padding: 10px 20px;
+ }
+ 
+ .dashboard .chart_container .chart_header {
+   display: flex;
+   justify-content: space-between;
+   /* padding-left: 20px; */
+   padding-right: 20px;
+   /* padding-top: 10px; */
+   font-weight: 700;
+   font-size: 1rem;
+   margin-bottom: 5px;
+ }
+
+ .dashboard .chart_container .chart_header span{
+   font-size: 1em;
+ }
+ 
+ .dashboard .chart_container .chart_header select {
+   background-color: lightgray;
+   border: none;
+   border-radius: 5px;
+ }
+ 
+ .dashboard .chart_container #myChart {
+   width: 50%;
+ }
+ 
+ /* table */
+ .dashboard .table_card {
+   overflow: auto;
+ }
+ 
+ .dashboard .chart_container table {
+   height: 100%;
+   padding-bottom: 10px;
+ }
+ 
+ .dashboard .chart_container table th {
+   font-size: 0.9rem;
+   font-weight: 600;
+ }
+ 
+ .dashboard .chart_container table td {
+   font-size: 0.7rem;
+ }
+ 
+ .dashboard .chart_container table td img {
+   height: 50px;
+   width: 50px;
+ }
+ 
+ @media screen and (max-width: 1280px) {
+   .dashboard .dashboard_container {
+     display: grid;
+     grid-template-rows: 20% 35% 35%;
+     gap: 15px;
+     height: 80vh;
+   }
+ 
+   /*analytics layout*/
+   .dashboard .card_container {
+     grid-template-columns: 18.8% 18.8% 18.8% 18.8% 18.8%;
+     gap: 15px;
+   }
+   .dashboard .card .card_content {
+     font-size: 1rem;
+   }
+ 
+   /*charts layout*/
+   .dashboard .chart_container {
+     grid-template-columns: 70% auto;
+     gap: 15px;
+   }
+ }
+ 
+ 

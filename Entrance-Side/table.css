@@ -1,0 +1,32 @@
+.reg-container{
+    /* margin-top: 40px; */
+    display: flex;
+    justify-content: center;
+}
+.reg-form{
+    width: 100%;
+    /* background-color: #dedede;   */
+    position: relative;
+    top:90px;
+}
+.reg-form ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.reg-form ul li{
+    border: none;   
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid black;
+    margin: 2px;
+}
+.reg-form .tabPanel{
+    display: none;
+    /* padding: 20px; */
+    margin: 10px 0;
+}

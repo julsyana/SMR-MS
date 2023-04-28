@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+	font-family: 'Poppins', sans-serif;
+}
+
+
+.main-container{
+    /* background-color: red; */
+    /* margin: 30px 60px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    padding: 2%;
+}
+
+.main-container .container{
+    width: 100%;
+    height: 100%;
+    /* background-color: #dedede; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+.main-container .container .subcontainer{
+    /* background-color: blue; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin: 0 2em; */
+    padding: 2%;
+}
+
+.main-container .container .subcontainer .numerical{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .container .subcontainer .numerical ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-container .container .subcontainer .numerical ul li{
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.main-container .container .subcontainer .numerical ul #total{
+    background-color: #4C9BF5;
+    color: #fff;
+    font-weight: 600;
+}
+
+.main-container .container .subcontainer .numerical ul #verified{
+    background-color: #4EC745;
+    color: #fff;
+    font-weight: 600;
+}
+.main-container .container .subcontainer .numerical ul #problem{
+    background-color: #DCED31;
+    color: #fff;
+    font-weight: 600;
+}
+.main-container .container .subcontainer .numerical ul #visitor{
+    background-color: #f58800;
+    color: #fff;
+    font-weight: 600;
+}
+.main-container .container .subcontainer .numerical ul #invalid{
+    background-color: #FF0022;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+
+
+.main-container .container .subcontainer .video{
+    /* background-color: #4EC745; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+
+/* .main-container .container .subcontainer .video #canvas{
+    display: none;
+
+} */
+
+.main-container .container .subcontainer .video video{
+  /* background-color: #3f633c; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.main-container .container .subcontainer .form-scan{
+    display: none;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.main-container .container .subcontainer .visitor-form{
+    /* background-color: #4EC745; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.main-container .container .subcontainer .visitor-form h4{
+    text-align: left;
+    width: 100%;
+    margin: 5px 5px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.main-container .container .subcontainer .visitor-form h4 span{
+    font-size: .9em;
+    color: #d45757;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.main-container .container .subcontainer .visitor-form form{
+    padding: 10px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    /* border: 1px solid #666666; */
+    overflow: hidden;
+    background-color: #ebebeb;
+}
+
+.main-container .container .subcontainer .visitor-form form input[type=text]{
+    margin:  0 0 5px;
+    font-size: 12px;
+    padding: 5px;
+    border: none;
+    
+}
+.main-container .container .subcontainer .visitor-form form input[type=button]{
+    margin: .7em 0;
+    background-color: #4EC745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+
+/* 
+.table .message{
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.table .message p{
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+
+
+
+.table{
+    background-color: yellowgreen;
+
+    width: 100%;
+    
+} */
+
+
+
+
+
+
+.main-container .container .table-container{
+    width: 50%;
+    height: 100%;
+    /* background-color: #4C9BF5; */
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    position: relative;
+}
+
+.main-container .container .table-container .form-button{
+    display: flex;
+    /* background-color: #4EC745; */
+    height: max-content;
+    margin: 5.2em 0 0 0 ;
+    
+}
+
+.main-container .container .table-container .form-button button.selected.students{
+    background-color: #4EC745;
+}
+
+.main-container .container .table-container .form-button button{
+    font-size: 1em;
+    padding: 10px 15px;
+    background: none;
+    color: #000;
+    border: 1px solid black;
+    margin-right: 2px;
+    width: 25%;
+    transition: background ease-in .2s;
+}
+
+
+
+.main-container .container .table-container .form-button button#students-btn:hover{
+    background-color: #4EC745;
+}
+
+.main-container .container .table-container .form-button button#pending-btn:hover{
+    background-color: #DCED31;
+}
+
+
+.main-container .container .table-container .form-button button#visitor-btn:hover{
+    background-color: #f58800;
+}
+
+
+.main-container .container .table-container .form-button button#archive-btn:hover{
+    background-color: #FF0022;
+}
+
+
+.main-container .container .table-container .form-button button:hover{
+    background-color: #949494;
+}
+
+
+
+.main-container .container .table-container .table-contents table{
+    margin: 30px 0 0 0;
+    width: 100%;
+    border-collapse: collapse;
+    /* background-color: #4EC745; */
+    
+}
+
+
+.main-container .container .table-container .table-contents table thead tr td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000000;
+    background-color: white;
+    word-break: break-word;
+    width: 20px;
+    
+}
+.main-container .container .table-container .table-contents table tbody tr td{
+    
+    padding: 5px 0;
+    text-align: center;
+    border: 1px solid #000000;
+    background-color: #dedede;
+    word-break: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pop-up-modal{
+    position: fixed;
+    top: 50;
+    left: 0;
+    /* background-color: rgba(0, 0, 0, 0.76); */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    display: none;
+}
+
+.pop-up-modal .modal-message{
+    margin: auto;
+    margin-top: 5%;
+    width: 50%;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,.3);
+}
+
+.pop-up-modal .modal-message .fa{
+    color: #de3700;
+    font-size: 7em;
+}
+
+.pop-up-modal .modal-message p{
+    margin-top: 20px;
+    font-size: 1.1em;
+    word-break: break-all;
+    text-transform:uppercase;
+}
+
+/* .pop-up-modal .modal-message p b{
+    text-transform: lowercase;
+} */
+
+.pop-up-modal .modal-message button{
+    align-self: center;
+    background-color: rgb(90, 126, 188);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 1em;
+    text-transform: capitalize;
+    border-radius: 4px;
+    border: none;
+} 
+
+
+
+
+
+
+
+
+
+/* ENTRANCE STUDENT INFORMATION */
+
+.main-container .container .table-container .student-id{
+    /* background-color: #666666; */
+    margin-top: 10px;
+}
+
+
+.main-container .container .table-container .student-id .stud-info{
+    display: flex;
+    width: 100%;
+    background-color: #dedede;
+    border-radius: 6px;
+    padding: 2%;
+}
+
+.main-container .container .table-container .student-id .stud-info .stud-img{
+    width: 35%;
+    height: 100%;
+    background-color: #8c8c8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .container .table-container .student-id .stud-info .stud-img .image{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+}
+
+
+.main-container .container .table-container .student-id .stud-info .stud-img .image img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+
+
+.main-container .container .table-container .student-id .stud-info .stud-ent-info{
+    /* background-color: #4C9BF5; */
+    width: 100%;
+    height: 100%;
+    padding: 1% 2%;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* padding: 0 10px; */
+}
+
+.main-container .container .table-container .student-id .stud-info .stud-ent-info h4, .stud-ent-info h2{
+    font-size: 1.2em;
+    padding: 0;
+    margin: 5px;
+    font-weight: 400;
+}
+
+
+.main-container .container .table-container .student-id .stud-info .stud-ent-info h2{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+
+/* END OF ENTRANCE STUDENT INFORMATION */
