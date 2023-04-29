@@ -30,6 +30,11 @@
          </div>
          
          <ul>
+
+            <li> 
+               <a href="./dashboard.php"> Dashboard </a>
+            </li>
+
             <li class="selected"> 
                <a href="./personal-information.php"> Personal Information </a>
             </li>
@@ -114,7 +119,7 @@
 
                      <p style="font-weight: 600;"> <?=$stud_logged['email']?></p>
 
-                     <p><b>Contact Number: 0<?=$stud_logged['contact_number']?></b></p>
+                     <p><b>Contact Number: <?=$stud_logged['contact_number']?></b></p>
 
 
                      <div class="status">
@@ -141,7 +146,7 @@
 
                      <div class="status">
                         
-                        <p> Health Status:
+                        <p><b> Health Status:
                      
                         
                            <?php if($res_stud_health_status['Status'] === "Not Cleared") { ?>

@@ -1,104 +1,305 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-*{
-	font-family: 'Poppins', sans-serif;
-	box-sizing: border-box;
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --headerColor: #d10000;
+  --loginBoxColor: #d10000;
+  --loginText: #707070;
 }
 
-
 body {
-	/* background-image: url("../assets/login_bg.jpg");
+  /* background-image: url("../assets/login_bg.jpg");
 	background-color: #05285c;
 	background-repeat: no-repeat, repeat;
 	background-size: 1100px; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 95vh;
-	flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-size: auto;
+  align-items: center;
+  height: 95vh;
+  flex-direction: column;
 }
 
 .demo-bg {
-	opacity: 0.5;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: auto;
-  }
-
-form {
-	width: 500px;
-	/* border: 2px solid #ccc; */
-	padding: 30px;
-	background: #fff;
-	border-radius: 15px;
-	opacity: 0.9;
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
 }
 
-form img{
-	height: 50px;
-	width: auto;
-	margin-right: 20px;
-	margin-bottom: -15px;
+/* .show-password {
+  text-align: left;
+}
+
+.show-password label {
+  font-size: 13px;
+}
+
+.show-password input {
+  margin-top: -50px;
+  margin-left: 120px;
+} */
+
+/* form {
+  width: 500px; */
+
+/* border: 2px solid #ccc; */
+
+/* padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  opacity: 0.9;
+} */
+
+/* form img {
+  height: 50px;
+  width: auto;
+  margin-right: 20px;
+  margin-bottom: -15px;
 }
 
 h2 {
-	text-align: center;
-	margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 input {
-	display: block;
-	border: 2px solid #ccc;
-	width: 100%;
-	padding: 10px;
-	margin: 10px auto;
-	border-radius: 5px;
+  display: block;
+  border: 2px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 label {
-	color: black;
-	font-size: 18px;
-	/* padding: 10px; */
+  color: black;
+  font-size: 18px; */
+/* padding: 10px; */
+/* } */
+
+/* button {
+  float: center;
+  background-color: #05285c;
+  padding: 10px 15px;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+}
+button:hover {
+  opacity: 0.7;
+} */
+
+.container .login-box section .login-container label {
+  font-size: 1em;
+  color: var(--loginText);
+  display: block;
+  margin-top: 10px;
 }
 
-button {
-	float: center;
-	background-color: #05285c;
-	padding: 10px 15px;
-	color: #fff;
-	width: 100%;
-	border-radius: 5px;
-	margin-right: 10px;
-	border: none;
+.container .login-box section .login-container input[type="password"] {
+  width: 100%;
+  padding: 1px 5px;
+  font-size: 1em;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--loginText);
+  color: var(--loginText);
+  text-align: center;
 }
-button:hover{
-	opacity: .7;
+
+/* .container
+  .login-box
+  section
+  .login-container
+  .show-password
+  input[type="checkbox"] {
+  text-align: left;
+ 
+  width: auto;
+} */
+
+.container .login-box section .login-container .rm {
+  display: inline;
+  font-size: 0.9em;
+}
+
+.container .login-box section .login-container input[type="submit"] {
+  border: none;
+  background-color: #163666;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 1.4em;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.container .login-box section .login-container input[type="submit"]:hover {
+  background-color: rgb(34, 77, 146);
+  transition: ease-in-out 0.3s;
+  color: white;
 }
 .error {
-   background: #F2DEDE;
-   color: #A94442;
-   padding: 10px;
-   width: 100%;
-   border-radius: 5px;
-   margin: 20px auto;
+  background: #f2dede;
+  color: #a94442;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 20px auto;
 }
 
 h1 {
-	text-align: center;
-	color: #fff;
+  text-align: center;
+  color: #000000;
+  font-size: 22px;
 }
 
+/* h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bolder;
+} */
+
 a {
-	float: right;
-	background: #5D8FD9;
-	padding: 10px 15px;
-	color: #fff;
-	border-radius: 5px;
-	margin-right: 10px;
-	border: none;
-	text-decoration: none;
+  float: right;
+  background: #5d8fd9;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+  text-decoration: none;
 }
-a:hover{
-	opacity: .7;
+a:hover {
+  opacity: 0.7;
+}
+
+/*LOGIN CONTAINER*/
+.container {
+  width: 100vw;
+  height: 98vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .login-box {
+  display: flex;
+  align-items: center;
+  width: 60vw;
+  height: 35vw;
+  background-color: #163666;
+  border-radius: 5px;
+}
+
+.container .login-box section h3 {
+  font-weight: normal;
+}
+
+.container .login-box section {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .login-box section img {
+  margin-bottom: 2%;
+  height: 200px;
+  width: 200px;
+}
+
+.container .login-box section:first-child {
+  border-right: 2px solid white;
+  color: white;
+}
+
+.container .login-box section .login-container {
+  position: relative;
+  width: 85%;
+  height: 80%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10%;
+  padding-top: 12%;
+  text-align: left;
+}
+
+.container .login-box section .login-container h3 {
+  font-weight: normal;
+  font-size: 1.2em;
+  color: var(--loginText);
+  margin-bottom: 15px;
+}
+
+.container .login-box section .login-container img {
+  position: absolute;
+  top: -10%;
+  transform: translateX(-50%);
+  height: 88px;
+  width: 88px;
+  left: 50%;
+}
+
+.container .login-box section .login-container label {
+  font-size: 1em;
+  color: var(--loginText);
+  display: block;
+  margin-top: 10px;
+}
+
+.container .login-box section .login-container input {
+  width: 100%;
+  padding: 1px 5px;
+  font-size: 1em;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--loginText);
+  color: var(--loginText);
+  text-align: center;
+}
+
+.container .login-box section .login-container input[type="checkbox"] {
+  text-align: left;
+  width: auto;
+}
+
+.container .login-box section .login-container .rm {
+  display: inline;
+  font-size: 0.9em;
+}
+
+.container .login-box section .login-container input[type="submit"] {
+  border: none;
+  background-color: darkblue;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 1.4em;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.container .login-box section .login-container input[type="submit"]:hover {
+  background-color: lightblue;
+  transition: ease-in-out 0.3s;
+}
+
+.container .login-box section .login-container p {
+  font-size: 0.8em;
+  text-align: center;
 }

@@ -38,7 +38,11 @@
          </div>
          
          <ul>
-            <li > 
+            <li> 
+               <a href="./dashboard.php"> Dashboard </a>
+            </li>
+
+            <li> 
                <a href="./personal-information.php"> Personal Information </a>
             </li>
          

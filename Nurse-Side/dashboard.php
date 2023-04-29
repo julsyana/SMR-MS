@@ -15,9 +15,12 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
 include('./includes/db_conn.php');
 $emp_id = $_SESSION['emp_id'];
 
-// SELECT ALL ADMINS
+// SELECT ALL NURSES
 $fetchNurseAccount = mysqli_query($conn1, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");
 $nurse = mysqli_fetch_assoc($fetchNurseAccount);
+
+// SELECT ALL ANNOUNCEMENTS
+$selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '$emp_id' ORDER BY time DESC");
 
 
 ?>
@@ -39,6 +42,7 @@ $nurse = mysqli_fetch_assoc($fetchNurseAccount);
 
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./css/patients.css" />
+  <link rel="stylesheet" href="./css/dashboard.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="action.js" defer></script>
@@ -116,9 +120,7 @@ $nurse = mysqli_fetch_assoc($fetchNurseAccount);
             <li class="px-4 w-100 mb-1 nav-item tab py-2">
               <a href="Mreport.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-plus-square mx-2"></i><span>Medical Requirements</span></span></a>
             </li>
-            <!-- <li  class="px-4 w-100 mb-1 nav-item tab py-2">
-                  <a href="department.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-building-o mx-2"></i><span>Departments</span></span></a>
-                  </li> -->
+    
             <li class="px-4 w-100 mb-1 nav-item tab py-2">
               <a href="appointment.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-calendar mx-2" aria-hidden="true"></i><span>Appointments</span></span></a>
             </li>
@@ -172,108 +174,60 @@ $nurse = mysqli_fetch_assoc($fetchNurseAccount);
                   </div>
                 </div>
               </div>
-              <div class="px-2 py-1 mt-3">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold">CONSULTED STUDENTS</p>
-                  <div>
-                    <select class="form-select" aria-label="Default select example">
-                      <option selected>Select Year</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="container-fluid" style="max-height: 500px;">
-                  <canvas id="myChart" class="w-100"></canvas>
-                </div>
-              </div>
 
-              <!-- <div class="d-flex justify-content-between mt-3">
-                      <p class="fw-bold">RECENT CONSULTED STUDENTS</p>
-                      <a href="#"> View All</a>
+      <!-- <div class="d-flex justify-content-between mt-3"> -->
+          <section class="admin-container">
+            <div class="announement-prof">
+                <div class="announcement-container">
+
+                    <div class="post-announcement">
+                        <div class="title-announce">
+                            <img src="./assets/QCUClinicLogo.png" width="50" height="50" alt="" />
+                            <h3> Post an Announcement. </h3>
+                        </div>
+
+                        
+                        <div class="post">
+                            <form action="./process/announcement.php" method="POST">
+                                <textarea name="announcement" placeholder="Write an announcement here..."></textarea>
+                                <div class="action-post">
+                                    <p id="message"> Posted Successfuly </p>
+                                    <input type="submit" value="POST" name="announceBtn">
+                                </div>
+                            </form>
+                        </div>
+                        
                     </div>
-                    <table class="table table-borderless">
-                    <thead>
-                        <tr class="text-light" style="background: #2D6DB2;">
-                          <th scope="col">Student No.</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Course</th>
-                          <th scope="col">Year</th>
-                          <th scope="col">Status</th>
-                        </tr>
-                      </thead> -->
 
-              <!-- <tbody class="table-group-divider">
-                        <?php
-                        include "db_conn.php";
-                        $sql = "SELECT * FROM students LIMIT 4";
-                        $run_sql = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                        if (mysqli_num_rows($run_sql) > 0) {
-                          while ($row = mysqli_fetch_array($run_sql)) {
-                        ?>
-                        <tr class="border-bottom">
-                          <td><?php echo $row['student_id'] ?></td>
-                          <td><?php echo $row['firstname'] . " " . $row['lastname'] ?></td>
-                          <td><?php echo $row['course'] ?></td>
-                          <td><?php echo $row['year_level'] ?></td>
-                          <td><?php echo $row['remarks'] ?></td>
-                        </tr>
-                        <?php }
-                        }
+                    <!-- <div class="posted-announcement" class="d-flex justify-content-between mt-3"> -->
+                    <div class="posted-announcement">
+                        <h3> Nurses Announcment! </h3>
+                        <div class="announcements">
+                            <?php
+                                if ($selAnnounce -> num_rows > 0){
+                                    while ($row = $selAnnounce -> fetch_assoc()){ ?>
+                                        <div class="announce-prof">
+                                            <h5> 
+                                                <img src="./assets/<?= $nurse['profile_pic'] ?>" width="30" height="40" alt="" />
+                                                <span style="margin-right: 250px; margin-top: 10px;"> Nr. <?=$row['lastname']?> posted </span>
+                                                <span class="date-time"> <?=$row['date']?> <?=$row['time']?></span>
+                                            </h5>
+                                            <p style="margin-left: 50px;"> <?=$row['announcement'];?> </p>
+                                        </div>
+                                 <?php }
+                                } ?>
+                           
+                        
+                        </div>
+                    </div>
 
-                        ?>
-                      
-                      
-                   
-                      </tbody>
-                    </table> -->
-
-
-
-
-              <div class="d-flex justify-content-between mt-3">
-                <p class="fw-bold">RECENT APPOINTMENTS</p>
-                <a href="#"> View All</a>
-              </div>
-              <table class="table table-borderless">
-                <thead>
-                  <tr class="text-light" style="background: #2D6DB2;">
-                    <th scope="col">Student No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Course</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Status</th>
-                  </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                  <tr class="border-bottom">
-                    <td>17-1234</td>
-                    <td>Juan T. Dela Cruz</td>
-                    <td>BSIT</td>
-                    <td>4th</td>
-                    <td class="text-warning">Pending</td>
-                  <tr class="border-bottom">
-                    <td>17-1234</td>
-                    <td>Juan T. Dela Cruz</td>
-                    <td>BSIT</td>
-                    <td>4th</td>
-                    <td class="text-warning">Pending</td>
-                  <tr class="border-bottom">
-                    <td>17-1234</td>
-                    <td>Juan T. Dela Cruz</td>
-                    <td>BSIT</td>
-                    <td>4th</td>
-                    <td class="text-warning">Pending</td>
-
-
-                </tbody>
-              </table>
-
+                </div>
             </div>
+       
+        </section>
+     <!-- </div> -->
 
-
-            <div class="col-md-3 flex-grow-1">
+            <div class="col-md-6 flex-grow-1">
               <div class="card mb-1" style="border:none;">
                 <div class="card-header text-light" style="background-color:#134E8E;">
                   <h2 id="time-display" style="text-align:center;">Loading...</h2>
