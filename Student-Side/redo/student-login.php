@@ -44,7 +44,7 @@
   <title>SMRMS | STUDENT | LOGIN</title>
 
   <body class="bg-body-secondary">
-    <nav class="navbar" style="background: var(--primary-bg);">
+    <nav class="navbar" style="background: var(--primary-bg); width: 100%;">
         <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../clinic-logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top mx-3">
@@ -52,7 +52,7 @@
           </a>
         </div>
       </nav>
-      <main class="p-4" style="height:80vh;">
+      <main class="p-4" style="height:80vh; margin-top: -15px; margin-right: -80px;">
         <div class="row mt-4 text-center align-self-center justify-content-center">
           <div class="col-sm-5">
               <div class="container rounded py-5 px-4 bg-secondary-subtle shadow">
@@ -98,7 +98,7 @@
                    </div>
 
                     <div class="mb-3">
-                      <button type="submit" name="submit_btn" class="btn btn-primary fw-semibold px-5 rounded-pill shadow"> LOG IN</button>
+                      <button type="submit" name="submit_btn" class="btn btn-primary fw-semibold px-5 rounded-pill shadow"> LOGIN </button>
                     </div>
                     <div >
 
@@ -113,7 +113,7 @@
           <div class="col-md-6 position-relative px-4">
             <div class="container position-relative"
             style="height: 100%;">
-            <center><img style="margin-left: -40px; margin-top: 20px;" src="../assets/qcupic.png" alt="" width="530" height="390"></center>
+            <center><img style="margin-left: 10px; margin-top: 12px;" src="../assets/qcupic.png" alt="" width="580" height="440"></center>
             </div>
           </div>
 

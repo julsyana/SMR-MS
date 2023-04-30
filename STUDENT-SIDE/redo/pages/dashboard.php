@@ -6,7 +6,7 @@
    //  $selRemind = mysqli_query($profConn, "SELECT * FROM `reminders` WHERE `empid`");
    //  $selStud = mysqli_query($profConn, "SELECT * FROM `studacc` WHERE `stud_id`");
 
-    // SELECT ALL ANNOUNCMENTS 
+    // SELECT ALL ANNOUNCMENTS
     $fetchAllAnnouncement = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY `date` asc ");
 
     $dateToday = date('m-d-y');
@@ -23,11 +23,11 @@
      $todaysAnnouncement = mysqli_fetch_assoc($fetchAnnouncementToday);
 
 
-     $emp_id = $_SESSION['emp_id'];
+   //   $emp_id = $_SESSION['emp_id'];
 
-     // SELECT ALL NURSES
-      $fetchNurseAccount = mysqli_query($conn, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");
-      $nurse = mysqli_fetch_assoc($fetchNurseAccount);
+   //   // SELECT ALL NURSES
+   //    $fetchNurseAccount = mysqli_query($conn, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");
+   //    $nurse = mysqli_fetch_assoc($fetchNurseAccount);
 
 ?>
 
@@ -148,7 +148,7 @@
                                         <div class="announce-prof">
                                             <h5> 
                                                 <img src="../../assets/<?= $nurse['profile_pic'] ?>" width="30" height="40" alt="" />
-                                                <span> Nr. <?=$announcements['lastname']?>, <?=$announcements['firstname']?> posted </span>
+                                                <span> <?=$announcements['position']?> <?=$announcements['firstname']?> <?=$announcements['lastname']?> posted </span>
                                                 <span class="date-time"> <?=$announcements['date']?> | <?=$announcements['time']?></span>
                                             </h5>
                                             <hr>

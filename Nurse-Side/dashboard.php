@@ -107,7 +107,7 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
       </div>
     </nav>
     <div class="row">
-      <div class="col-md-2 p-0 position-relative" style="min-height: 100vh; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; background: #134E8E;">
+      <div class="col-md-2 p-0 position-relative" style="min-height: 150vh; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; background: #134E8E;">
         <div class="w-100">
           <ul class="mt-4 list-unstyled navbar-nav ps-0 ">
 
@@ -153,7 +153,7 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
           <div class="row d-flex">
             <div class="col-md-8">
 
-              <div class="px-3 rounded-3 d-flex align-items-center mt-3" style="background:#0C4079" ;>
+              <div class="px-3 rounded-3 d-flex align-items-center mt-3" style="background:#0C4079;">
 
                 <div class="position-relative" style="width:180px;height:150px;">
                   <img src="./assets/<?= $nurse['profile_pic'] ?>" class="position-absolute w-90 h-100">
@@ -182,7 +182,7 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
 
                     <div class="post-announcement">
                         <div class="title-announce">
-                            <img src="./assets/QCUClinicLogo.png" width="50" height="50" alt="" />
+                            <img src="./assets/announcement.png" width="50" height="50" alt="" />
                             <h3> Post an Announcement. </h3>
                         </div>
 
@@ -209,10 +209,10 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
                                         <div class="announce-prof">
                                             <h5> 
                                                 <img src="./assets/<?= $nurse['profile_pic'] ?>" width="30" height="40" alt="" />
-                                                <span style="margin-right: auto; margin-top: 10px;"> &nbsp; Nr. <?=$row['lastname']?> posted </span>
+                                                <span style="margin-right: auto; margin-top: 10px; font-size: 17px;"> &nbsp; <?=$row['position']?> <?=$row['lastname']?> posted </span>
                                                 <span class="date-time"> <?=$row['date']?> <?=$row['time']?></span>
                                             </h5>
-                                            <p style="margin-left: auto;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?=$row['announcement'];?> </p>
+                                            <p style="margin-left: auto; font-size: 18px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?=$row['announcement'];?> </p>
                                         </div>
                                  <?php }
                                 } ?>
@@ -227,7 +227,7 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
         </section>
      <!-- </div> -->
 
-            <div class="col-6 col-s-12 flex-grow-1" style="margin-left: 670px; margin-top: -960px;">
+            <div class="col-6 col-s-12 flex-grow-1" style="margin-left: 670px; margin-top: -800px;">
               <div class="card mb-1" style="border:none;">
                 <div class="card-header text-light" style="background-color:#134E8E;">
                   <h2 id="time-display" style="text-align:center;">Loading...</h2>
