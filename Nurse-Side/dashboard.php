@@ -209,10 +209,10 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
                                         <div class="announce-prof">
                                             <h5> 
                                                 <img src="./assets/<?= $nurse['profile_pic'] ?>" width="30" height="40" alt="" />
-                                                <span style="margin-right: 250px; margin-top: 10px;"> Nr. <?=$row['lastname']?> posted </span>
+                                                <span style="margin-right: auto; margin-top: 10px;"> &nbsp; Nr. <?=$row['lastname']?> posted </span>
                                                 <span class="date-time"> <?=$row['date']?> <?=$row['time']?></span>
                                             </h5>
-                                            <p style="margin-left: 50px;"> <?=$row['announcement'];?> </p>
+                                            <p style="margin-left: auto;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?=$row['announcement'];?> </p>
                                         </div>
                                  <?php }
                                 } ?>
@@ -227,7 +227,7 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
         </section>
      <!-- </div> -->
 
-            <div class="col-md-6 flex-grow-1">
+            <div class="col-6 col-s-12 flex-grow-1" style="margin-left: 670px; margin-top: -960px;">
               <div class="card mb-1" style="border:none;">
                 <div class="card-header text-light" style="background-color:#134E8E;">
                   <h2 id="time-display" style="text-align:center;">Loading...</h2>
@@ -249,7 +249,8 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` WHERE `emp_id` = '
                   </tbody>
                 </table>
               </div>
-              <div class="d-flex justify-content-between mt-3">
+              <br>
+              <div class="d-flex justify-content-between col-6 col-s-18">
                 <p class="fw-bold">ACTIVITY LOG</p>
 
               </div>
