@@ -15,8 +15,10 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
 include('./includes/db_conn.php');
 
 
-// SELECT ALL STUDENTS 
-$fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment` LIMIT 15");
+
+    // SELECT ALL STUDENTS 
+    $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `mis.student_info` JOIN `stud_appointment` ON `mis.student_info`.`student_id` = `stud_appointment`.`student_id` LIMIT 15");
+
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +39,7 @@ $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment` L
   <link rel="stylesheet" href="./css/patients.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="action.js" defer></script>
+  <script src="./ajax/action.js" defer></script>
 
 </head>
 
@@ -71,44 +73,50 @@ $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment` L
 </style>
 
 <body>
-  <div class="container-fluid bg-light-subtle">
-    <nav class="row">
-      <div class="py-2 px-3 d-flex justify-content-between align-items-center" style="background-color:#134E8E;">
-        <div class="logo navbar-brand" href="#">
-          <img src="./assets/QCUClinicLogo.png" width="50" height="50" alt="" />
-          <span class="fw-regular fs-4 text-light">Student Medical Record</span>
-        </div>
-        <div class="container-fluid d-flex justify-content-start">
-          <button id="sidebarCollapse" class="navbar-toggle border-0 bg-dark ms-0 ms-md-2 ms-lg-0 order-1 order-md-1">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="ms-auto order-sm-0" id="navbarNav">
-            <ul class="navbar-nav ms-auto text-white d-flex align-items-left align-items-lg-center">
-              <span></span>
-              <li class="nav-item px-0 mx-2 d-flex align-items-center">
-                <a class="nav-link" href="logout.php">Logout</a>
-              </li>
+    <div class="container-fluid bg-light-subtle">
+        <nav class="row">
+            <div class="py-2 px-3 d-flex justify-content-between align-items-center" style="background-color:#134E8E;">
+                <div class="logo navbar-brand" href="#">
+                    <img src="./assets/QCUClinicLogo.png" width="50" height="50" alt="" />
+                    <span class="fw-regular fs-4 text-light">Student Medical Record</span>
+                  </div>
+                  <div class="container-fluid d-flex justify-content-start">
+                    <button
+                      id="sidebarCollapse"
+                      class="navbar-toggle border-0 bg-dark ms-0 ms-md-2 ms-lg-0 order-1 order-md-1"
+                    >
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="ms-auto order-sm-0" id="navbarNav">
+                      <ul
+                        class="navbar-nav ms-auto text-white d-flex align-items-left align-items-lg-center"
+                      >
+                        <span></span>
+                        <li class="nav-item px-2 mx-2 d-flex align-items-center">
+                          <a class="nav-link" href="logout.php">Logout</a>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+        </nav>
+        <div class="row bg-light">
+          <div class="col-md-2 p-0 position-relative" style="min-height:100vh;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;background: #134E8E;" id="top">
+             <div class="w-100">
+              <ul class="mt-4 list-unstyled navbar-nav ps-0 ">
 
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div class="row bg-light">
-      <div class="col-md-2 p-0 position-relative" style="min-height:100vh;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;background: #134E8E;">
-        <div class="w-100">
-          <ul class="mt-4 list-unstyled navbar-nav ps-0 ">
+                  <li  class="px-4 w-100 mb-1 nav-item tab py-2">
+                    <a href="dashboard.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-area-chart mx-2"></i><span>Home</span></span></a>
+                  </li>
+                  <li  class="px-4 w-100 mb-1 nav-item tab py-2">
+                    <a href="student.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-users mx-2"></i><span>Students</span></span></a>
+                  </li>
+                  <li  class="px-4 w-100 mb-1 nav-item tab py-2">
+                    <a href="Mreport.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-plus-square mx-2"></i><span>Medical Requirements</span></span></a>
+                  </li>
+                  <!-- <li  class="px-4 w-100 mb-1 nav-item tab py-2">
 
-            <li class="px-4 w-100 mb-1 nav-item tab py-2">
-              <a href="dashboard.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-area-chart mx-2"></i><span>Home</span></span></a>
-            </li>
-            <li class="px-4 w-100 mb-1 nav-item tab py-2">
-              <a href="student.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-users mx-2"></i><span>Students</span></span></a>
-            </li>
-            <li class="px-4 w-100 mb-1 nav-item tab py-2">
-              <a href="Mreport.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-plus-square mx-2"></i><span>Medical Requirements</span></span></a>
-            </li>
-            <!-- <li  class="px-4 w-100 mb-1 nav-item tab py-2">
                   <a href="department.php" class="nav-link"><span class="fx-5 fw-800 text-light"><i class="fa fa-building-o mx-2"></i><span>Departments</span></span></a>
                   </li> -->
             <li class="px-4 w-100 mb-1 nav-item active tab py-2">
@@ -155,63 +163,67 @@ $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment` L
                                     <option name="sort" value="app_date">Date</option> -->
                     <!-- <option name="sort" value="scheduled">Scheduled</option>
                                     <option name="sort" value="cancelled">Cancelled</option> -->
-                    <!-- <option name="sort" value="pending">Pending</option> -->
-                  </select>
-                </div>
+                                    <!-- <option name="sort" value="pending">Pending</option> -->
+                                  </select>
+                                </div>
+                  
+                              <div class="input-group form-input-sm d-flex align-items-center gap-2 ">
+                                  <input type="text" class="form-control w-50 shadow-none" name="search" id="search_app" placeholder="&#xF002; Search..." aria-label="Search..." aria-describedby="button-addon2" style="font-family:Poppins, FontAwesome">
+                                  <!-- <a href="#" class="text-secondary"> <i class="fa fa-th-large mx-1 fs-3" aria-hidden="true"></i></a> -->
+                                  <a href="#" class="text-secondary"><i class="fa fa-bars mx-1 fs-3" aria-hidden="true"></i></a>
+                              </div>
+                            </div>
+                        </div>
 
-                <div class="input-group form-input-sm d-flex align-items-center gap-2 ">
-                  <input type="text" class="form-control w-50 shadow-none" name="search" id="search_app" placeholder="&#xF002; Search..." aria-label="Search..." aria-describedby="button-addon2" style="font-family:Poppins, FontAwesome">
-                  <!-- <a href="#" class="text-secondary"> <i class="fa fa-th-large mx-1 fs-3" aria-hidden="true"></i></a> -->
-                  <a href="#" class="text-secondary"><i class="fa fa-bars mx-1 fs-3" aria-hidden="true"></i></a>
+                        <div class="p-3 mt-3 shadow">
+                            <table class="table text-center table-borderless">
+                                <thead class="border-bottom border-2 rounded-2">
+                                  <tr>
+                                    <th scope="col">Student No.</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Reference No.</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <a href="#" class="nav-link">
+
+                                        <?php if(mysqli_num_rows($fetchAllAppointments) > 0) { 
+                                          while ($appoint = mysqli_fetch_assoc($fetchAllAppointments)) {  ?>
+
+                                        <tr>        
+                                            <!-- <td colspan="2"><img src="./assets/badang.JPG"  width="65" height="65" alt=""></td> -->
+                                            <td><?=$appoint['student_id']?></td>
+                                            <td><?=$appoint['lastname']?>, <?=$appoint['firstname']?> <?=$appoint['middlename']?></td>
+                                            <td><?=$appoint['app_type']?></td>
+                                            <td><?=$appoint['app_date']?></td>
+                                            <td><?=$appoint['app_time']?></td>
+                                            <td><?=$appoint['reference_no']?></td>
+                                            <td><label style="color: Green; font-weight: bold;"><?=$appoint['app_status']?></label></td>
+                                            <td><a href="#view" class="custom_btn" style="text-decoration: none; color: Blue;font-weight: bold;" data-toggle="modal" data-ref_no = "<?=$appoint['reference_no']?>" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="view_appointment">View</a></td>
+                                        </tr>
+
+                                        <?php } } ?>
+                                        
+                                     </a>
+                                </tbody>
+                              </table>
+
+              <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content" id="appointment_content"></div>
                 </div>
               </div>
-            </div>
+  </div>                          
+    </div>
+     <div class="position-fixed bottom-0 end-0 m-3 px-3 py-2 rounded-circle"  style="background-color:#134E8E;">
+      <a href="#top"><i class="fa-solid fa-arrow-up fs-3 text-light"></i></a>
+    </div>
 
-            <div class="p-3 mt-3 shadow">
-              <table class="table text-center table-borderless">
-                <thead class="border-bottom border-2 rounded-2">
-                  <tr>
-                    <th scope="col">Student No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Reference No.</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <a href="#" class="nav-link">
-
-                    <?php if (mysqli_num_rows($fetchAllAppointments) > 0) {
-                      while ($appoint = mysqli_fetch_assoc($fetchAllAppointments)) {  ?>
-
-                        <tr>
-                          <!-- <td colspan="2"><img src="./assets/badang.JPG"  width="65" height="65" alt=""></td> -->
-                          <td><?= $appoint['student_id'] ?></td>
-                          <td>Juan T. Dela Cruz</td>
-                          <td><?= $appoint['app_type'] ?></td>
-                          <td><?= $appoint['app_date'] ?></td>
-                          <td><?= $appoint['app_time'] ?></td>
-                          <td><?= $appoint['reference_no'] ?></td>
-                          <td><label style="color: Green; font-weight: bold;"><?= $appoint['app_status'] ?></label></td>
-                          <td><a href="#view" class="custom_btn" style="text-decoration: none; color: Blue;font-weight: bold;" data-toggle="modal">View</a></td>
-                        </tr>
-
-                    <?php }
-                    } ?>
-
-                  </a>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-
-
-
-        </div>
 </body>
 <!-- CUSTOM AJAX FILE -->
 <script src="./ajax/search_appointments.js"> </script>
