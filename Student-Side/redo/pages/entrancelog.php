@@ -129,14 +129,15 @@
                      <?php 
                            if(mysqli_num_rows($sel_ent_log_stud) > 0){
                               while($row = mysqli_fetch_array($sel_ent_log_stud)){
+
+                                  $conDate = strtotime($row['logdate'].$row['timein']); 
+                                 $formattedDate = date('F d, Y -  g:i A', $conDate);
                                  
                      ?>
                      <tr>
                         <td> 
                            <div>
-
-                              <?=$row['timein']?>
-                              
+                              <?=$formattedDate?>
                            </div>
                         <td> 
                            campus
