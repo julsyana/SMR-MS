@@ -136,10 +136,11 @@
    }
 
    function fetchentrancelog($conn, $stud_id){
-      $select ="SELECT DISTINCT * FROM `entrance_log` a
+      $select ="SELECT * FROM `entrance_log` a
       JOIN `stud_archive` b
       ON a.student_number = b.student_id
-      WHERE a.student_number = '$stud_id'";
+      WHERE a.student_number = '$stud_id'
+      ORDER BY `timein` DESC";
 
       $run_query = mysqli_query($conn,$select) or die(mysqli_error($conn));
 

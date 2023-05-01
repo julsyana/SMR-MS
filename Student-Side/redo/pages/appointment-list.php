@@ -60,9 +60,9 @@
                <a href="./appointment-list.php"> Appointment </a>
             </li>
 
-            <!-- <li > 
+            <li > 
                <a href="./entrancelog.php"> Entrace Log </a>
-            </li> -->
+            </li>
          </ul>
         
       </nav>
