@@ -2,12 +2,12 @@
    include "../includes/header_process.php";
 
     // SELECT ALL ANNOUNCEMENT
-    $selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` WHERE `emp_id` ORDER BY `time` asc");
+    $selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY time DESC");
    //  $selRemind = mysqli_query($profConn, "SELECT * FROM `reminders` WHERE `empid`");
    //  $selStud = mysqli_query($profConn, "SELECT * FROM `studacc` WHERE `stud_id`");
 
     // SELECT ALL ANNOUNCMENTS
-    $fetchAllAnnouncement = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY `date` asc ");
+    $fetchAllAnnouncement = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY `date` desc ");
 
     $dateToday = date('m-d-y');
     $day = date("d");
@@ -137,24 +137,22 @@
                
             </div>
             
+              <div class="announement-prof">
+                <div class="announcement-container">
 
-                <div class="posted-announcement">
-
-                        <h3><img src="../icons/announcement.png" alt="">Announcements from Nurses! </h3>
+                   <div class="posted-announcement">
+                        <h3> ANNOUNCEMENTS FORM SCHOOL NURSES! </h3>
                         <div class="announcements">
                             <?php
-                                if(mysqli_num_rows($fetchAllAnnouncement) > 0) { 
-                                    while ($announcements = mysqli_fetch_assoc($fetchAllAnnouncement)) {  ?>
+                                if ($selAnnounce -> num_rows > 0){
+                                    while ($row = $selAnnounce -> fetch_assoc()){ ?>
                                         <div class="announce-prof">
                                             <h5> 
-                                                <img src="../../assets/<?= $nurse['profile_pic'] ?>" width="30" height="40" alt="" />
-                                                <span> <?=$announcements['position']?> <?=$announcements['firstname']?> <?=$announcements['lastname']?> posted </span>
-                                                <span class="date-time"> <?=$announcements['date']?> | <?=$announcements['time']?></span>
+                                                <img src="../../assets/<?=$row['image']?>" width="30" height="40" alt="" />
+                                                <span style="margin-right: auto; margin-top: 10px; font-size: 17px;"> &nbsp; <?=$row['position']?> <?=$row['firstname']?> <?=$row['lastname']?> posted </span>
+                                                <span class="date-time"> <?=$row['date']?> <?=$row['time']?></span>
                                             </h5>
-                                            <hr>
-                                            <br>
-                                            <p> <?=$announcements['announcement'];?> </p>
-
+                                            <p style="margin-left: auto; font-size: 18px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?=$row['announcement'];?> </p>
                                         </div>
                                  <?php }
                                 } ?>
@@ -162,7 +160,12 @@
                         
                         </div>
                     </div>
-                  </div>
+
+                </div>
+            </div>
+
+
+
 
                </div>   
 

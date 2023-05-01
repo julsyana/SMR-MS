@@ -32,7 +32,7 @@
          } else {
 
             $_SESSION['is_verified'] = $stud['isVerified'];
-            header("location: ../redo/pages/personal-information.php");
+            header("location: ../redo/pages/dashboard.php");
 
          }
 

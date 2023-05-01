@@ -873,13 +873,13 @@
                                   if(mysqli_num_rows($run_query) > 0){
                                     while($row = mysqli_fetch_array($run_query)){
                                       echo'
-
-                                        <div class="modal-header d-grid">
+                                      <div class="modal-view">
+                                        <div class="modal-header d-grid" id="modal-header">
                                           <h1 class="modal-title fs-5" id="staticBackdropLabel">APPOINTMENT</h1>
                                          <div> <span class="fw-semibold">Date of Application: </span><span>'.$row['date_apply'].'</span></div>
                                         </div>
 
-                                        <div class="modal-body">
+                                        <div class="modal-body" id="modal-body">
                                             <div class="d-flex justify-content-between mb-2"><span class="fw-semibold">Type of Service:</span> <span>'.$row['app_type'].'</span></div>
                                             <div class="d-flex justify-content-between mb-2" ><span class="fw-semibold" >Reference Number:</span> <span>'.$row['reference_no'].'</span></div>
                                             <div class="d-flex justify-content-between mb-2"><span class="fw-semibold">Date: </span> <span>'.$row['app_date'].'</span></div>
@@ -889,9 +889,11 @@
                                             <span>'.$row['app_reason'].'</span>
                                         </div>
 
-                                        <div class="modal-footer">
+                                        <div class="modal-footer" id="modal-footer">
+                                          <a href="appointment.php"><button type="button" class="btn btn-secondary">Cancel</button></a> 
                                           <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data_ref_no ="'.$row['reference_no'].'" aria-label="Close" id="done">Done</button>
-                                        </div>';
+                                        </div>
+                                      </div>';
                                       }
                                    }
 
@@ -907,6 +909,8 @@
                            
                           
   ?>
+
+
    
    <?php
 

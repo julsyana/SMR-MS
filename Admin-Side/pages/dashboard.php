@@ -1,5 +1,17 @@
 <?php
    include "../includes/function-header.php";
+   $id = $_SESSION['user_id'];
+   // $emp_id = $_SESSION['emp_id'];
+
+
+   
+// SELECT ALL ANNOUNCEMENTS
+$selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY time DESC");
+
+// SELECT ALL NURSES
+// $fetchNurseAccount = mysqli_query($conn, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");
+// $nurse = mysqli_fetch_assoc($fetchNurseAccount);
+
 ?>
 
 <!DOCTYPE html>
@@ -179,36 +191,64 @@
                </div>
             </div>
             
-            <div class="chart_container">
+           
+                   <!-- <section class="admin-container">
+            <div class="announement-prof">
+                <div class="announcement-container"> -->
 
-               <div class="card_content">
+                    <!-- <div class="post-announcement">
+                        <div class="title-announce">
+                            <img src="../assets/announcement.png" width="50" height="50" alt="" />
+                            <h3> Post an Announcement. </h3>
+                        </div>
 
-                  <div class="chart_header">
+                        
+                        <div class="post">
+                            <form action="../process/announcement.php" method="POST">
+                                <textarea name="announcement" placeholder="Write an announcement here..."></textarea>
+                                <div class="action-post">
+                                    <p id="message"> Posted Successfuly </p>
+                                    <input type="submit" value="POST" name="announceBtn">
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div> -->
 
-                     <span>STUDENT COVID-19 CASES</span>
+                   
 
-                     <div class="chart_filter">
+                <!-- </div>
+            </div>
+       
+        </section> -->
 
-                        <select name="filter" id="filter">
-                           <option value="Campus">Campus</option>
-                        </select>
+             
 
-                        <select name="filter" id="filter">
-                           <option value="Monthly">Monthly</option>
-                           <option value="Yearly">Yearly</option>
-                        </select>
+         <div class="chart_container">
 
-                     </div>
-                  </div>
+               <div class="card_content1">
 
-                  <div class="chart1">
+                      <div class="post-announcement">
+                        <div class="title-announce">
+                            <img src="../assets/announcement.png" width="50" height="50" alt="" />
+                            <h3> Post an Announcement. </h3>
+                        </div>
 
-                     <canvas id="myChart" class="chart"></canvas>
-
-                  </div>
+                        
+                        <div class="post">
+                            <form action="../process/announcement.php" method="POST">
+                                <textarea name="announcement" placeholder="Write an announcement here..."></textarea>
+                                <div class="action-post">
+                                    <p id="message"> Posted Successfuly </p>
+                                    <input type="submit" value="POST" name="announceBtn">
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
 
                </div>
-             
+
                <div class="card_content">
 
                   <div class="chart_header">
@@ -227,29 +267,31 @@
 
             <div class="chart_container">
                
-               <div class="card_content">
+               <div class="card_content2">
 
-                  <div class="chart_header">
-
-                     <span> APPOINTMENTS </span>
-                     
-                     <div class="chart_filter">
+              <div class="posted-announcement">
+                        <h3> Nurses Announcment! </h3>
+                        <div class="announcements">
+                              <?php
+                                if ($selAnnounce -> num_rows > 0){
+                                    while ($row = $selAnnounce -> fetch_assoc()){ ?>
+                                        <div class="announce-prof">
+                                            <h5> 
+                                                <img src="../assets/<?=$row['image']?>" width="30" height="40" alt="" />
+                                                <span style="margin-right: auto; margin-top: 10px; font-size: 17px;"> &nbsp; <?=$row['position']?> <?=$row['lastname']?> posted </span>
+                                                <span class="date-time"> <?=$row['date']?> <?=$row['time']?></span>
+                                            </h5>
+                                            <p style="margin-left: auto; font-size: 18px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?=$row['announcement'];?> </p>
+                                        </div>
+                                 <?php }
+                                } ?>
+                           
+                           
                         
-                        <select name="filter" id="filter">
-                           <option value="Medical">Medical</option>
-                           <option value="Dental">Dental</option>
-                           </select>
-                           <select name="filter" id="filter">
-                           <option value="Monthly">Monthly</option>
-                           <option value="Yearly">Yearly</option>
-                        </select>
+                        </div>
+                    </div>
+                   <!-- </div> -->
 
-                     </div>
-                  </div>
-
-                 <div class="chart1">
-                   <canvas id="myChart3" class="chart"></canvas>
-                 </div>
                </div>
 
                <div class="card_content table_card">
@@ -267,6 +309,24 @@
                      </tr>
                     
                      <tr>
+                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
+                        <td>23-0003</td>
+                        <td>Juan Two T. Dela Cruz</td>
+                        <td>San Francisco</td>
+                     </tr>
+                       <tr>
+                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
+                        <td>23-0003</td>
+                        <td>Juan Two T. Dela Cruz</td>
+                        <td>San Francisco</td>
+                     </tr>
+                       <tr>
+                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
+                        <td>23-0003</td>
+                        <td>Juan Two T. Dela Cruz</td>
+                        <td>San Francisco</td>
+                     </tr>
+                       <tr>
                         <!-- <td><img src="./assets/nurse.jpg"></td> -->
                         <td>23-0003</td>
                         <td>Juan Two T. Dela Cruz</td>

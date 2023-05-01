@@ -175,10 +175,13 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` ORDER BY time DESC
                   </div>
                 </div>
               </div>
-              
-              
-              <div class="px-2 py-1 mt-3">
-                <div class="post-announcement">
+
+      <!-- <div class="d-flex justify-content-between mt-3"> -->
+          <section class="admin-container">
+            <div class="announement-prof">
+                <div class="announcement-container">
+
+                    <div class="post-announcement">
                         <div class="title-announce">
                             <img src="./assets/announcement.png" width="50" height="50" alt="" />
                             <h3> Post an Announcement. </h3>
@@ -197,16 +200,8 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` ORDER BY time DESC
                         
                     </div>
 
-              </div>
-
-            
-
-
-
-
-              <div class="d-flex justify-content-between mt-3">
-              </div>
-              <div class="posted-announcement">
+                    <!-- <div class="posted-announcement" class="d-flex justify-content-between mt-3"> -->
+                    <div class="posted-announcement">
                         <h3> Nurses Announcment! </h3>
                         <div class="announcements">
                             <?php
@@ -226,10 +221,14 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` ORDER BY time DESC
                         
                         </div>
                     </div>
+
+                </div>
             </div>
+       
+        </section>
+     <!-- </div> -->
 
-
-            <div class="col-md-3 flex-grow-1">
+            <div class="col-6 col-s-12 flex-grow-1" style="margin-left: 670px; margin-top: -800px;">
               <div class="card mb-1" style="border:none;">
                 <div class="card-header text-light" style="background-color:#134E8E;">
                   <h2 id="time-display" style="text-align:center;">Loading...</h2>
@@ -251,7 +250,8 @@ $selAnnounce = mysqli_query($conn1, "SELECT * FROM `announce` ORDER BY time DESC
                   </tbody>
                 </table>
               </div>
-              <div class="d-flex justify-content-between mt-3">
+              <br>
+              <div class="d-flex justify-content-between col-6 col-s-18">
                 <p class="fw-bold">ACTIVITY LOG</p>
 
               </div>

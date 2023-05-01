@@ -33,11 +33,20 @@
 
 </head>
 <body>
+		 <div class="icon-holder">
+            <img src="./assets/settings-icon.png" alt="">
+         </div>
+
+         <!-- <div class="qcu-title">
+            <img src="./assets/QCUClinicLogo.png" alt="">
+            <h2> ADMIN LOGIN </h2>
+         </div> -->
 
 	<form action="./process/login.php" method="post">
+
      	<div class="header_login">
 			<img src="./assets/QCUClinicLogo.png" alt="">
-			ADMIN LOGIN
+			<p>ADMIN LOGIN</p>
 		</div>
 		<div class="input_wrapper">
 			<?php if (isset($_SESSION['errMessage'])) { ?>
@@ -53,7 +62,7 @@
 				<input type="password" name="password" id="floatingPassword" placeholder="Password">
 			</div>
 					 <div class="show-password" style="text-align: left;">
-                          <label for="show-pass" style="color: white; font-size: 15px;"> Show password  </label>
+                          <label for="show-pass" style="color: black; font-size: 15px;"> Show password  </label>
                           <input type="checkbox" name="" id="show-pass" style="margin-top: -17px; margin-left: -20px" >
                       </div>
 
