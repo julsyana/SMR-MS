@@ -145,9 +145,9 @@ $fetchAllMedicine = mysqli_query($conn1, $medicine);
                   <option value="expirationDate"> Expiration Date </option>
                   <option value="num_stocks"> Stocks </option>
                   <!-- <option value="campus"> Campus </option> -->
-                  <option value="San Bartolome"> San Bartolome Campus </option>
+                  <!-- <option value="San Bartolome"> San Bartolome Campus </option>
                   <option value="San Francisco"> San Francisco Campus </option>
-                  <option value="Batasan"> Batasan Campus </option>
+                  <option value="Batasan"> Batasan Campus </option> -->
                 </select>
               </div>
               <div class="input-group form-input-sm d-flex align-items-center gap-2" style="width: 30%; margin-left: 49%;">
