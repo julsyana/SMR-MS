@@ -30,6 +30,7 @@ include './queries.php';
         <script src="http://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     </head>
          
@@ -49,7 +50,7 @@ include './queries.php';
       </div>
 
       <div class="main-container">
-
+ 
         <div class="container">
 
           <div class="subcontainer">
@@ -91,7 +92,7 @@ include './queries.php';
           
             
           </div>
-            
+         
           <div class="table-container">
           
 
@@ -99,11 +100,20 @@ include './queries.php';
 
             </div>
 
+            <div class="campus">
+              <select name="campus" id="campus">
+                <option value="No Campus Seleted" Selected>No Campus Seleted</option>
+                <option value="Batasan">Batasan</option>
+                <option value="San Bartolome">San Bartolome</option>
+                <option value="San Francisco">San Francisco</option>
+              </select>
+            </div>
+            
             <div class="form-button">
 
-              <button id="students-btn" class="selected students"> Students </button>
+              <button id="students-btn" class="selected students"> Cleared </button>
 
-              <button id="pending-btn"> Pending </button>
+              <button id="pending-btn"> PUI </button>
 
               <button id="visitor-btn"> Visitors </button>
 
@@ -287,8 +297,20 @@ include './queries.php';
 
   });
 
-  
-  
+    // $(document).ready(function(){
+    //   $('#campus').change(function(){
+    //     var selectedOption = $(this).val();
+    //     $.ajax({
+    //       url: 'function.php',
+    //       type: 'POST',
+    //       data: { campus: selectedOption }, // change "option" to "campus"
+    //       success: function(response){
+    //         $('#result').html(response);
+    //       }
+    //     });
+    //   });
+    // });
+
   function updateClock() {
     var now = new Date();
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

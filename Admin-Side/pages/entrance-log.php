@@ -16,6 +16,7 @@
 
    <!-- custom css -->
    <link rel="stylesheet" href="../css/admin.css">
+   <link rel="stylesheet" href="../css/entrancelog.css">
    
    
 </head>
@@ -113,6 +114,18 @@
                <h3>  entrance log </h3>
             </div>
 
+             <div class="form-button">
+
+              <button id="cleared-btn" class="selected students"> Cleared </button>
+
+              <button id="pending-btn"> PUI </button>
+
+              <button id="visitor-btn"> Visitors </button>
+
+              <button id="archive-btn"> Archive </button>
+
+            </div>
+
             <div class="admin-list-container">
                <table border="0">
                   <thead>
@@ -177,5 +190,61 @@
    
 </body>
 
-<!-- custom script -->
+<script>
+  
+  $(document).ready(function(){
+    
+    $('#cleared-btn').click(function(){
+  
+   $('#all-btn').css('background', '#ffffff');
+   $('#all-btn').css('color', 'black');
+   $('#cleared-btn').css('background', '#6b6b6b');
+   $('#pending-btn').css('background', '#ffffff');
+   $('#visitor-btn').css('background', '#ffffff');
+   $('#archive-btn').css('background', '#ffffff');
+  
+      $('.admin-list-container').load('ent-cleared.php');
+        
+    });
+
+    $('#pending-btn').click(function(){
+  
+   $('#all-btn').css('background', '#ffffff');
+   $('#all-btn').css('color', 'black');
+   $('#cleared-btn').css('background', '#ffffff');
+   $('#pending-btn').css('background', '#6b6b6b');
+   $('#visitor-btn').css('background', '#ffffff');
+   $('#archive-btn').css('background', '#ffffff');
+  
+      $('.admin-list-container').load('ent-pui.php');
+        
+    });
+
+    $('#visitor-btn').click(function(){
+  
+   $('#all-btn').css('background', '#ffffff');
+   $('#all-btn').css('color', 'black');
+   $('#cleared-btn').css('background', '#ffffff');
+   $('#pending-btn').css('background', '#ffffff');
+   $('#visitor-btn').css('background', '#6b6b6b');
+   $('#archive-btn').css('background', '#ffffff');
+  
+      $('.admin-list-container').load('ent-visitor.php');
+        
+    });
+
+    $('#archive-btn').click(function(){
+  
+   $('#all-btn').css('background', '#ffffff');
+   $('#all-btn').css('color', 'black');
+   $('#cleared-btn').css('background', '#ffffff');
+   $('#pending-btn').css('background', '#ffffff');
+   $('#visitor-btn').css('background', '#ffffff');
+   $('#archive-btn').css('background', '#6b6b6b');
+  
+      $('.admin-list-container').load('ent-archive.php');
+        
+    });    
+   });
+</script>
 </html>

@@ -11,7 +11,7 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
 
 $fetchAllMedicine = mysqli_query($conn1, "SELECT * FROM `medicine`");
 
-$fetchAllConsultations = mysqli_query($conn, "SELECT * FROM `consultations`");
+$fetchAllConsultations = mysqli_query($conn1, "SELECT * FROM `consultations`");
 
 $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment`");
 

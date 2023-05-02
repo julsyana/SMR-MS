@@ -59,6 +59,7 @@
    width: 100%;
    background-color: #fff;
    border-radius: 4px;
+   table-layout: fixed;
   
 }
 
@@ -87,7 +88,12 @@
 .admin-container .admin-list-container table tbody tr td{
    text-align: center;
    padding: 10px 12px;
+   word-break: break-all;
    text-transform: capitalize;
+   cursor: pointer;
+}
+th:first-child, td:first-child {
+  min-width: 10px;
 }
 
 .admin-container .admin-list-container table tbody tr td .admin-profile{

@@ -28,16 +28,24 @@ $verified_total = $count_verified['count'];
 
 
 
-$sqlnotverified = "SELECT COUNT(*) as count FROM `entrance_log` a
-JOIN `sample_stud_data` b 
-ON a.`student_number` = b.`student_id`
-WHERE b.`Status` = 'Pending' AND a.logdate = CURRENT_DATE();";
+// $sqlnotverified = "SELECT COUNT(*) as count FROM `entrance_log` a
+// JOIN `sample_stud_data` b 
+// ON a.`student_number` = b.`student_id`
+// WHERE b.`Status` = 'PUI' AND a.logdate = CURRENT_DATE();";
+
+// $result2 = mysqli_query($conn, $sqlnotverified);
+
+// $count_not_verified = mysqli_fetch_assoc($result2);
+// $notverified_total = $count_not_verified['count'];
+
+$sqlnotverified = "SELECT COUNT(*) as count FROM `entrance_log`
+
+WHERE `Status` = 'PUI' AND logdate = CURRENT_DATE();";
 
 $result2 = mysqli_query($conn, $sqlnotverified);
 
 $count_not_verified = mysqli_fetch_assoc($result2);
 $notverified_total = $count_not_verified['count'];
-
 
 
 $sel_archive = "SELECT * FROM `stud_archive` WHERE `date_archive` = CURRENT_DATE() ORDER BY id DESC LIMIT 5;";

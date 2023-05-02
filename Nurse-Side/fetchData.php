@@ -5,7 +5,7 @@
     $emp_id = $_SESSION['emp_id'];
 
     $sql =   "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'";
-    $squery = $conn->query($sql);	
+    $squery = $conn1->query($sql);	
 		$srow = $squery->fetch_assoc();
 
     $Nfirstname = $srow['firstname'];
@@ -487,7 +487,7 @@
                         <option selected>Select Hospital</option>';
 
                           $info = "SELECT * FROM hospitals";
-                          $run_query = mysqli_query($conn,$info) or die(mysqli_error($conn));
+                          $run_query = mysqli_query($conn1,$info) or die(mysqli_error($conn1));
                       
                           if(mysqli_num_rows($run_query) > 0){
                             while($row = mysqli_fetch_array($run_query)){
@@ -509,7 +509,7 @@
                     <option selected>Select Medicine</option>';
 
                       $info = "SELECT * FROM medicine";
-                      $run_query = mysqli_query($conn,$info) or die(mysqli_error($conn));
+                      $run_query = mysqli_query($conn1,$info) or die(mysqli_error($conn1));
                       if(mysqli_num_rows($run_query) > 0){
                         while($row = mysqli_fetch_array($run_query)){
                           echo  '<option value="'.$row['name'].'">'.$row['name'].'</option>';
@@ -529,13 +529,13 @@
                       <h6 class="fw-bold mb-3">Cleared ?</h6>
                       <div class="d-flex mb-3">
                       <div class="form-check mx-2">
-                      <input class="form-check-input" type="radio" name="cleared[]" id="cleared_yes" value="Verified">
+                      <input class="form-check-input" type="radio" name="cleared[]" id="cleared_yes" value="Cleared">
                       <label class="form-check-label" for="cleared_yes">
                       Yes
                       </label>
                       </div>
                       <div class="form-check mx-2">
-                      <input class="form-check-input" type="radio" name="cleared[]" id="cleared_no" value="Not Verified">
+                      <input class="form-check-input" type="radio" name="cleared[]" id="cleared_no" value="Not Cleared">
                       <label class="form-check-label" for="cleared_no">
                       No
                       </label>
@@ -617,7 +617,7 @@
           $query = $conn1->query($info);
           $row = $query->fetch_assoc();
         
-			if($conn->query($sql)){
+			if($conn1->query($sql)){
 
           $date_now = date("Y");
           $date_past = date("Y") - 1;
