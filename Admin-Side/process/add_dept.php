@@ -11,10 +11,10 @@
    $dept = $_POST['dept'];
    $dept_building = $_POST['dept_building'];
    $dept_room = $_POST['dept_room'];
-   $dept_fname = $_POST['dept_fname'];
-   $dept_lname = $_POST['dept_lname'];
+   // $dept_fname = $_POST['dept_fname'];
+   $course_program = $_POST['course_program'];
    $dept_email = $_POST['dept_email'];
-   $dept_cnum = $_POST['dept_cnum'];
+   // $dept_cnum = $_POST['dept_cnum'];
 
 
    $deptImg_name = $_FILES['dept_profile']['name'];
@@ -22,7 +22,7 @@
    $deptImg_error = $_FILES['dept_profile']['error'];
 
 
-   $deptInsert = insertDept($conn, $emp_id, $dept, $dept_building, $dept_room, $deptImg_name, $dept_fname, $dept_lname, $dept_email, $dept_cnum, $dept_position);
+   $deptInsert = insertDept($conn, $emp_id, $dept, $dept_building, $dept_room, $deptImg_name, $course_program, $dept_email, $dept_position);
 
    if($deptInsert){
 

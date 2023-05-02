@@ -12,6 +12,10 @@ $selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY time DESC"
 // $fetchNurseAccount = mysqli_query($conn, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");
 // $nurse = mysqli_fetch_assoc($fetchNurseAccount);
 
+$date = date("Y-m-d"); // Get current date in "YYYY-MM-DD" format
+$fetchActiveNurses = mysqli_query($conn, "SELECT * FROM `nurse_schedule` JOIN `nurses` ON `nurse_schedule`.`emp_id` = `nurses`.`emp_id` WHERE `nurse_schedule`.`schedule_day` = 'Tuesday'");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -192,38 +196,6 @@ $selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY time DESC"
             </div>
             
            
-                   <!-- <section class="admin-container">
-            <div class="announement-prof">
-                <div class="announcement-container"> -->
-
-                    <!-- <div class="post-announcement">
-                        <div class="title-announce">
-                            <img src="../assets/announcement.png" width="50" height="50" alt="" />
-                            <h3> Post an Announcement. </h3>
-                        </div>
-
-                        
-                        <div class="post">
-                            <form action="../process/announcement.php" method="POST">
-                                <textarea name="announcement" placeholder="Write an announcement here..."></textarea>
-                                <div class="action-post">
-                                    <p id="message"> Posted Successfuly </p>
-                                    <input type="submit" value="POST" name="announceBtn">
-                                </div>
-                            </form>
-                        </div>
-                        
-                    </div> -->
-
-                   
-
-                <!-- </div>
-            </div>
-       
-        </section> -->
-
-             
-
          <div class="chart_container">
 
                <div class="card_content1">
@@ -306,33 +278,24 @@ $selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY time DESC"
                         <th>Emp ID</th>
                         <th>Fullname</th>
                         <th>Campus</th>
-                     </tr>
-                    
-                     <tr>
-                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
-                        <td>23-0003</td>
-                        <td>Juan Two T. Dela Cruz</td>
-                        <td>San Francisco</td>
-                     </tr>
-                       <tr>
-                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
-                        <td>23-0003</td>
-                        <td>Juan Two T. Dela Cruz</td>
-                        <td>San Francisco</td>
-                     </tr>
-                       <tr>
-                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
-                        <td>23-0003</td>
-                        <td>Juan Two T. Dela Cruz</td>
-                        <td>San Francisco</td>
-                     </tr>
-                       <tr>
-                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
-                        <td>23-0003</td>
-                        <td>Juan Two T. Dela Cruz</td>
-                        <td>San Francisco</td>
+                        <!-- <th>Time</th> -->
                      </tr>
 
+                      <?php
+                           if ($fetchActiveNurses -> num_rows > 0){
+                              while ($actNurse = $fetchActiveNurses -> fetch_assoc()){ ?>
+
+                        
+                     <tr>
+                        <!-- <td><img src="./assets/nurse.jpg"></td> -->
+                        <td><?=$actNurse['emp_id']?></td>
+                        <td><?=$actNurse['firstname']?> <?=$actNurse['middlename']?> <?=$actNurse['lastname']?></td>
+                        <td><?=$actNurse['campus']?></td>
+                        <!-- <td><?=$actNurse['last_active']?></td> -->
+                     </tr>
+                     <?php } }?>
+
+                     
                   </table>
                </div>
             </div>

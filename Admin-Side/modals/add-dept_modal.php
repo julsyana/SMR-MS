@@ -17,14 +17,14 @@
 
                      </div>
 
-                     <div class="form-input">
+                     <!-- <div class="form-input">
                         <label for="dept-position"> Position </label>
 
                         <select name="dept_position" id="dept-position" required>
-                           <option value="head"> Head </option>
+                           <option value="head"> Head </option> -->
                            <!-- <option value="assistant"> Assistant </option> -->
-                        </select>
-                     </div>
+                        <!-- </select>
+                     </div> -->
 
                      
 
@@ -71,14 +71,14 @@
                      </div>
 
 
-                     <div class="form-input">
+                     <!-- <div class="form-input">
                         <label for="dept-fname"> Firstname </label>
                         <input type="text" name="dept_fname" id="dept-fname" placeholder="Ex: Juan" required>
-                     </div>
+                     </div> -->
 
                      <div class="form-input">
-                        <label for="dept-lname"> Lastname </label>
-                        <input type="text" name="dept_lname" id="dept-lname" placeholder="Ex: Dela Cruz" required>
+                        <label for="course_program"> Course/Program </label>
+                        <input type="text" name="course_program" id="course_program" placeholder="Ex: BS Information Technology" required>
                      </div>
 
                      <div class="form-input">
@@ -86,10 +86,10 @@
                         <input type="text" name="dept_email" id="dept-email" placeholder="Ex: juan.delacruz@gmail.com" required>
                      </div>
 
-                     <div class="form-input">
+                     <!-- <div class="form-input">
                         <label for="dept-cNum"> Contact Number </label>
                         <input type="text" name="dept_cnum" id="dept-cNum" placeholder="Ex: 09**********" maxlength="11" minlength="11" required>
-                     </div>
+                     </div> -->
 
 
                      <div class="form-button">

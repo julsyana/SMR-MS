@@ -170,7 +170,7 @@
 
                                  <div>
                                     <span class="name" style="font-weight: bold; text-transform:capitalize">
-                                       <?=$dept_rows['firstname']?> <?=$dept_rows['lastname']?>
+                                       <?=$dept_rows['course_program']?>
                                     </span>
 
                                     <span class="nurse">
@@ -178,7 +178,7 @@
                                     </span>
                                  </div>
 
-                                 <span class="nurse"> <?=$dept_rows['email']?> </span>
+                                 <span class="nurse" style="font-size: 14px;"> <?=$dept_rows['email']?> </span>
 
                                  <!-- <span class="nurse"> <?=$dept_rows['contact_num']?> </span> -->
 

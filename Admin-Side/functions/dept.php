@@ -18,11 +18,13 @@ function fetchSelDept($conn, $dept_id){
 }
 
 
-function insertDept($conn, $empId, $name, $building, $room, $image, $fname, $lname, $email, $cnum, $position){
+// function insertDept($conn, $empId, $name, $building, $room, $image, $fname, $lname, $email, $cnum, $position){
+
+   function insertDept($conn, $empId, $name, $building, $room, $image, $course_program, $email){
 
    $ins = "INSERT INTO `departments`
-   (`emp_id`, `dept_name`, `building_name`, `room_num`, `image`, `firstname`, `lastname`, `email`, `contact_num`, `position`) VALUES 
-   ('$empId','$name','$building','$room','$image','$fname','$lname','$email','$cnum','$position')";
+   (`emp_id`, `dept_name`, `building_name`, `room_num`, `image`, `course_program`, `email`) VALUES 
+   ('$empId','$name','$building','$room','$image','$course_program','$email')";
 
    $res = mysqli_query($conn, $ins);
 
@@ -31,17 +33,15 @@ function insertDept($conn, $empId, $name, $building, $room, $image, $fname, $lna
 }
 
 
-function updateDept($conn, $empId, $building, $room, $image, $fname, $lname, $email, $cnum){
+function updateDept($conn, $empId, $building, $room, $image, $course_program, $email){
 
    if($image == null){
 
       $upd = "UPDATE `departments` SET 
       `building_name`='$building',
       `room_num` = '$room',
-      `firstname`='$fname',
-      `lastname`='$lname',
-      `email`='$email',
-      `contact_num`='$cnum'
+      `course_program`='$course_program',
+      `email`='$email'
       WHERE `emp_id` = '$empId' ";
 
    } else {
@@ -50,10 +50,8 @@ function updateDept($conn, $empId, $building, $room, $image, $fname, $lname, $em
       `building_name`='$building',
       `room_num` = '$room',
       `image` = '$image',
-      `firstname`='$fname',
-      `lastname`='$lname',
-      `email`='$email',
-      `contact_num`='$cnum'
+      `course_program`='$course_program',
+      `email`='$email'
       WHERE `emp_id` = '$empId' ";
 
    }
