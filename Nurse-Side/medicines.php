@@ -6,9 +6,9 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
   //redirect to login
   header("location: index.php");
 }
-
-
-$fetchAllMedicine = mysqli_query($conn1, "SELECT * FROM `medicine`");
+$emp_id = $_SESSION['emp_id'];
+$medicine = "SELECT * FROM `medicine` a JOIN `nurses` b ON a.campus = b.campus WHERE b.emp_id = '$emp_id'";
+$fetchAllMedicine = mysqli_query($conn1, $medicine);
 
 ?>
 <!DOCTYPE html>
@@ -194,7 +194,7 @@ $fetchAllMedicine = mysqli_query($conn1, "SELECT * FROM `medicine`");
                         </td>
 
                         <td style="text-align:justify;text-justify:inter-word;width:450px;padding-left: 30px;">
-                          <span class="mdc-stock">Desctiption: </span>
+                          <span class="mdc-stock">Description: </span>
                           <span class="mdc-qty"><?= $description ?>...</span>
                         </td>
 
