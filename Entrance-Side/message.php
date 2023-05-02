@@ -51,8 +51,8 @@
             </div>
    
             <div class="form-button">
-               <button id="validated-btn" data-stud_id="<?=$stud_id?>"> Cleared </button>
-               <button id="not-validated-btn" data-stud_id="<?=$stud_id?>"> Not Cleared </button>
+               <button id="validated-btn" data-stud_id="<?=$stud_id?>"> Allowed </button>
+               <button id="not-validated-btn" data-stud_id="<?=$stud_id?>"> Not Allowed </button>
                <button id="close"> close </button>
             </div>
          </div>
@@ -130,6 +130,14 @@ setTimeout(function(){
 
          var stud_id = $(this).data('stud_id');
          alert('Go to archive table ' + stud_id);
+
+          $('.table-contents').load('./update_status_archive.php',{
+
+            stud_id: stud_id, 
+
+         })
+
+         $('#not-verified').hide();
 
         
       });

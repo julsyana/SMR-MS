@@ -28,7 +28,7 @@
    
    function pending($conn, $stud_id) {
 
-      $upd = "UPDATE `sample_stud_data` SET `Status`='Pending' WHERE `student_id` = '$stud_id'";
+      $upd = "UPDATE `sample_stud_data` SET `Status`='PUI' WHERE `student_id` = '$stud_id'";
 
       $res = mysqli_query($conn, $upd);
 

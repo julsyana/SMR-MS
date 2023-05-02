@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['emp_id']) && isset($_SESSION['username'])) {
 
-    include "db_conn.php";
+    include "./includes/db_conn.php";
 
 if (isset($_POST['old_password']) && isset($_POST['new_password'])
     && isset($_POST['confirm_password'])) {
@@ -32,11 +32,11 @@ if (isset($_POST['old_password']) && isset($_POST['new_password'])
         $emp_id = $_SESSION['emp_id'];
 
         $sql = "SELECT password FROM nurses WHERE emp_id='$emp_id' AND password='$old_password'";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn1, $sql);
         if(mysqli_num_rows($result) === 1){
         	
         	$sql_2 = "UPDATE nurses SET password='$new_password' WHERE emp_id='$emp_id'";
-        	mysqli_query($conn, $sql_2);
+        	mysqli_query($conn1, $sql_2);
            
             header("Location: account.php?success=Password changed");
 	        exit();
