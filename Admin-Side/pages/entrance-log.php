@@ -116,13 +116,13 @@
 
              <div class="form-button">
 
-              <button id="cleared-btn" class="selected students"> Cleared </button>
+              <button id="cleared-btn" class="selected students"><b> Cleared </b></button>
 
-              <button id="pending-btn"> PUI </button>
+              <button id="pending-btn"><b> PUI </b></button>
 
-              <button id="visitor-btn"> Visitors </button>
+              <button id="visitor-btn"><b> Visitors </b></button>
 
-              <button id="archive-btn"> Archive </button>
+              <button id="archive-btn"><b> Archive </b></button>
 
             </div>
 
@@ -198,7 +198,7 @@
   
    $('#all-btn').css('background', '#ffffff');
    $('#all-btn').css('color', 'black');
-   $('#cleared-btn').css('background', '#6b6b6b');
+   $('#cleared-btn').css('background', '#7696ff');
    $('#pending-btn').css('background', '#ffffff');
    $('#visitor-btn').css('background', '#ffffff');
    $('#archive-btn').css('background', '#ffffff');
@@ -212,7 +212,7 @@
    $('#all-btn').css('background', '#ffffff');
    $('#all-btn').css('color', 'black');
    $('#cleared-btn').css('background', '#ffffff');
-   $('#pending-btn').css('background', '#6b6b6b');
+   $('#pending-btn').css('background', '#7696ff');
    $('#visitor-btn').css('background', '#ffffff');
    $('#archive-btn').css('background', '#ffffff');
   
@@ -226,7 +226,7 @@
    $('#all-btn').css('color', 'black');
    $('#cleared-btn').css('background', '#ffffff');
    $('#pending-btn').css('background', '#ffffff');
-   $('#visitor-btn').css('background', '#6b6b6b');
+   $('#visitor-btn').css('background', '#7696ff');
    $('#archive-btn').css('background', '#ffffff');
   
       $('.admin-list-container').load('ent-visitor.php');
@@ -240,7 +240,7 @@
    $('#cleared-btn').css('background', '#ffffff');
    $('#pending-btn').css('background', '#ffffff');
    $('#visitor-btn').css('background', '#ffffff');
-   $('#archive-btn').css('background', '#6b6b6b');
+   $('#archive-btn').css('background', '#7696ff');
   
       $('.admin-list-container').load('ent-archive.php');
         

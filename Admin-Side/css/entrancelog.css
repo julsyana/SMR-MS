@@ -1,25 +1,25 @@
-.form-button{
-    display: flex;
-    /* background-color: #4EC745; */
-    height: max-content;
-    /* margin: 5.2em 0 0 0 ; */
+.form-button {
+  display: flex;
+  /* background-color: #4EC745; */
+  height: max-content;
+  /* margin: 5.2em 0 0 0 ; */
 }
-.form-button button.selected.students{
-    background-color: #6b6b6b;
-    color: #000;
+.form-button button.selected.students {
+  background-color: #7696ff;
+  color: #000;
 }
-.form-button button{
-    font-size: 1em;
-    padding: 5px 10px;
-    background-color: #fff;
-    color: #000000;
-    border: 1px solid #000;
-    margin-right: 2px;
-    width: 25%;
-    transition: background ease-in .2s;
-    cursor: pointer;
+.form-button button {
+  font-size: 1em;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #000000;
+  border: 1px solid #000;
+  margin-right: 2px;
+  width: 25%;
+  transition: background ease-in 0.2s;
+  cursor: pointer;
 }
-.form-button button:hover{
-    background-color: #6b6b6b;
-    color: black;
+.form-button button:hover {
+  background-color: #94aaf1;
+  color: black;
 }
