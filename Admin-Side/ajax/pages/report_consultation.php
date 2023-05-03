@@ -4,10 +4,10 @@
 
 
    // select all student appointment
-   $stud_app = fetchReport($conn);
+   $stud_app = fetchConsult($conn);
 
-   $total_medical = totalService($conn, "Medical");
-   $total_dental = totalService($conn, "Dental");
+   // $total_medical = totalService($conn, "Medical");
+   // $total_dental = totalService($conn, "Dental");
 
 
 ?>
@@ -19,7 +19,7 @@
                   </div>
 
 
-                  <div class="graphical-data" id="graphical-data">
+                  <!-- <div class="graphical-data" id="graphical-data">
                      <div class="graph">
                         <div class="graph-title">
                            <h3> total number of appointments </h3>
@@ -42,23 +42,24 @@
                            <canvas class="con-pieChart"></canvas>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
 
                   <div class="list-of-data-tbl">
                      
                      <table border="0">
                         <thead>
                            <tr> 
-                              <th> Student No. </th>
                               <th> Student Name </th>
+                              <th> Gender </th>
+                              <th> Course </th>
                               <th> Section </th>
-                              <th> Consultation Date </th>
-                              <th> Temperature </th>
-                              <th> Symptom(s) </th>
+                              <th> Patient's Complain </th>
                               <th> Medicine Given </th>
-                              <th> Duration </th>
+                              <th> Quantity </th>
                               <th> Nurse Assisted </th>
-                              <th> Remarks </th>
+                              <th> Campus </th>
+                              <th> Date of Consultation </th>
+                              <!-- <th> Remarks </th> -->
                            </tr>
                         </thead>
 
@@ -67,23 +68,25 @@
                               if(mysqli_num_rows($stud_app) > 0){
                                  while($row = mysqli_fetch_assoc($stud_app)){
 
-                                    $app_date = $row['app_date'];
-                                    $app_date = new DateTime($app_date);
-                                    $app_date = $app_date->format("F d, Y");
+                                    // $app_date = $row['app_date'];
+                                    // $app_date = new DateTime($app_date);
+                                    // $app_date = $app_date->format("F d, Y");
 
                                     ?>
                                     
                                        <tr> 
-                                          <td> <?=$row['student_id']?> </td>
                                           <td> <?=$row['lastname']?>, <?=$row['firstname']?> <?=$row['mi']?>.  </td>
+                                          <td> <?=$row['gender']?> </td>
+                                          <td> <?=$row['code']?> </td>
                                           <td> <?=$row['section']?> </td>
-                                          <td> <?=$row['app_type']?> Service </td>
-                                          <td> <?=$row['app_reason']?> </td>
-                                          <td> <?=$app_date?> </td>
-                                          <td> <?=$row['app_time']?> </td>
-                                          <td> <?=$row['reference_no']?> </td>
-                                          <td> Nr. </td>
-                                          <td style="text-transform: capitalize"> <?=$row['app_status']?> </td>
+                                          <td> <?=$row['symptoms']?></td>
+                                          <td> <?=$row['medicine']?> </td>
+                                          <td> <?=$row['quantity']?> </td>
+                                          <td> , RN </td>
+                                          <td> <?=$row['branch']?> </td>
+                                          <td> <?=$row['date_of_consultation']?> </td>
+                                          
+                                          <!-- <td style="text-transform: capitalize"> <?=$row['app_status']?> </td> -->
                                        </tr>
                                     
                                     

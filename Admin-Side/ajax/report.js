@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+   $('#report-content-container').load('../ajax/pages/report_consultation.php');
+
    $('#type').change(function(){
 
       let type = $(this).val();
@@ -13,6 +15,11 @@ $(document).ready(function(){
          case "Consultation":
 
             $('#report-content-container').load('../ajax/pages/report_consultation.php')
+            break;
+
+         case "Medicine":
+
+            $('#report-content-container').load('../ajax/pages/report_medicine.php')
             break;
 
          default:

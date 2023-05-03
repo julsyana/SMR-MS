@@ -6,7 +6,7 @@
 
    
 // SELECT ALL ANNOUNCEMENTS
-$selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY time DESC");
+$selAnnounce = mysqli_query($conn, "SELECT * FROM `announce` ORDER BY date DESC");
 
 // SELECT ALL NURSES
 // $fetchNurseAccount = mysqli_query($conn, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");

@@ -583,8 +583,8 @@
               $hospital_add = $_POST['hospital_add'];
               
 
-        $sql = "INSERT INTO consultations (student_id, date_of_consultation, symptoms, othersymptoms, body_temp,suspected_covid, tested_covid, confined, how_long, medicine, referred,hospital,hospital_add) 
-                VALUES ('$student_id',NOW(),'$symptoms', '$other_symptoms','$body_temp','$close_contact','$covid_test','$confined','$how_long','$medicines','$referred','$hospital','$hospital_add')";
+        $sql = "INSERT INTO consultations (student_id, emp_id, date_of_consultation, symptoms, othersymptoms, body_temp,suspected_covid, tested_covid, confined, how_long, medicine, quantity, referred,hospital,hospital_add) 
+                VALUES ('$student_id','$emp_id',NOW(), '$symptoms', '$other_symptoms','$body_temp','$close_contact','$covid_test','$confined','$how_long','$medicines','$quantity', '$referred','$hospital','$hospital_add')";
 
         $run_query = mysqli_query($conn1,$sql) or die(mysqli_error($conn1));
 
@@ -682,12 +682,12 @@
               </div>
               <div class="col text-center">
                 <div class="d-grid">
-                  <span class="fw-semibold text-nowrap" id="nurse">Nr. Mary Ann Casipit</span>
+                  <span class="fw-semibold text-nowrap" id="nurse"> '.$Nfirstname.' '.$Nlastname.', RN </span>
                   <hr class="border border-1 border-dark" />
                   <span class="fw-semibold text-nowrap">University Nurse</span>
                 </div>
               </div>
-              <div class="col text-center">qr</div>
+              <div class="col text-center"></div>
             </div>
           </div>
           <div class="d-flex gap-2 mt-3 justify-content-end">

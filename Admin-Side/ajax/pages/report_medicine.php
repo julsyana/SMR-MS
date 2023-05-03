@@ -4,10 +4,8 @@
 
 
    // select all student appointment
-   $stud_app = fetchReport($conn);
-
-   $total_medical = totalService($conn, "Medical");
-   $total_dental = totalService($conn, "Dental");
+  $medicineRes = fetchMeds($conn);
+  
 
 
 ?>
@@ -15,7 +13,7 @@
                <div class="report-box">
 
                   <div class="report-header">
-                     <h2> Appointments report </h2>
+                     <h2> Medicines report </h2>
                   </div>
 
 
@@ -26,7 +24,7 @@
                         </div>
                         
                         <div class="line-graph">
-                           <canvas class="apps-lineGraph"></canvas>
+                           <canvas class="con-lineGraph"></canvas>
                         </div>
 
                         
@@ -39,7 +37,7 @@
                         </div>
 
                         <div class="pie-chart">
-                           <canvas class="apps-pieChart"></canvas>
+                           <canvas class="con-pieChart"></canvas>
                         </div>
                      </div>
                   </div> -->
@@ -49,43 +47,43 @@
                      <table border="0">
                         <thead>
                            <tr> 
-                              <th> Student Name </th>
-                              <th> Gender </th>
-                              <th> Course </th>
-                              <th> Section </th>
-                              <th> Appointment type </th>
-                              <th> Date of Appointments </th>
-                              <th> Time of Appointments </th>
-                              <!-- <th> Nurse Assisted </th> -->
-                              <th> Campus </th>
-                              <th> Date of Appointments Created </th>
+                              <th> Medicine/Supply </th>
+                              <th> Expiration Date </th>
+                              <th> Total Quantity</th>
+                              <!-- <th> Total of Left Medicines </th>
+                              <th> Total of Reduced Medicines </th> -->
+                              <th> SB (San Bartolome) </th>
+                              <th> BAT (Batasan) </th>
+                              <th> SF (San Fransisco) </th>
                            </tr>
                         </thead>
 
                         <tbody>
                            <?php 
-                              if(mysqli_num_rows($stud_app) > 0){
-                                 while($row = mysqli_fetch_assoc($stud_app)){
+                              if(mysqli_num_rows($medicineRes) > 0){
+                                 while($row = mysqli_fetch_assoc($medicineRes)){
 
-                                    $app_date = $row['app_date'];
-                                    $app_date = new DateTime($app_date);
-                                    $app_date = $app_date->format("F d, Y");
+                                    // $sanBartolome = totalBranch($conn, $row['campus']);
+                                    $totalQty = totalQty($conn, $row['name']);
+                                    
+
+                                    // $app_date = $row['app_date'];
+                                    // $app_date = new DateTime($app_date);
+                                    // $app_date = $app_date->format("F d, Y");
 
                                     ?>
                                     
                                        <tr> 
-                                          <td> <?=$row['lastname']?>, <?=$row['firstname']?> <?=$row['mi']?>.  </td>
-                                          <td> <?=$row['gender']?> </td>
-                                          <td> <?=$row['program']?> </td>
-                                          <td> <?=$row['section']?> </td>
-                                          <td> <?=$row['app_type']?> Service </td>
-                                          <!-- <td> <?=$row['app_reason']?> </td> -->
-                                          <td> <?=$app_date?> </td>
-                                          <td> <?=$row['app_time']?> </td>
-                                          <!-- <td>  </td> -->
-                                          <td> <?=$row['branch']?> </td>
-                                          <td> <?=$row['date_apply']?> </td>
-                                          <!-- <td style="text-transform: capitalize"> <?=$row['app_status']?> </td> -->
+                                          <td> <?=$row['name']?> </td>
+                                          <td> <?=$row['expirationDate']?></td>
+                                          <td> <?=$totalQty['total']?> </td>
+                                          <!-- <td>  Service </td>
+                                          <td>  </td> -->
+                                          <td> <?=$totalQty['sanBartolome']?> </td>
+                                          <td> <?=$totalQty['batasan']?> </td>
+                                          <td> <?=$totalQty['sanFrancisco']?> </td>
+                                          <!-- <td> , RN </td> -->
+                                          <td style="text-transform: capitalize">  </td>
                                        </tr>
                                     
                                     
@@ -114,10 +112,8 @@
                </div>
 
 
-
 <!-- charts -->
 <?php
    include "../../js/charts/line-chart.php";
    include "../../js/charts/pie-chart.php";
-
 ?>
