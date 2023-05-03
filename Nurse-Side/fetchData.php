@@ -583,8 +583,8 @@
               $hospital_add = $_POST['hospital_add'];
               
 
-        $sql = "INSERT INTO consultations (student_id, date_of_consultation, symptoms, othersymptoms, body_temp,suspected_covid, tested_covid, confined, how_long, medicine, referred,hospital,hospital_add) 
-                VALUES ('$student_id',NOW(),'$symptoms', '$other_symptoms','$body_temp','$close_contact','$covid_test','$confined','$how_long','$medicines','$referred','$hospital','$hospital_add')";
+        $sql = "INSERT INTO consultations (student_id, emp_id, date_of_consultation, symptoms, othersymptoms, body_temp,suspected_covid, tested_covid, confined, how_long, medicine, referred,hospital,hospital_add,status) 
+                VALUES ('$student_id','$emp_id',NOW(),'$symptoms', '$other_symptoms','$body_temp','$close_contact','$covid_test','$confined','$how_long','$medicines','$referred','$hospital','$hospital_add','$cleared')";
 
         $run_query = mysqli_query($conn1,$sql) or die(mysqli_error($conn1));
 

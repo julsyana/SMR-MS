@@ -17,8 +17,18 @@ include('./includes/db_conn.php');
 
 
     // SELECT ALL STUDENTS 
-    $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `mis.student_info` JOIN `stud_appointment` ON `mis.student_info`.`student_id` = `stud_appointment`.`student_id` LIMIT 15");
-
+    $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `mis.student_info` 
+    JOIN `stud_appointment` 
+    ON `mis.student_info`.`student_id` = `stud_appointment`.`student_id` 
+    WHERE app_status = 'Done'
+    ORDER BY app_date DESC");
+    
+    
+    $fetchAllAppointmentstoday = mysqli_query($conn1, "SELECT * FROM `mis.student_info` 
+    JOIN `stud_appointment`
+    ON `mis.student_info`.`student_id` = `stud_appointment`.`student_id` 
+    WHERE app_date = CURRENT_DATE()
+    ORDER BY app_date DESC");
 
 ?>
 <!DOCTYPE html>
@@ -151,7 +161,7 @@ include('./includes/db_conn.php');
           <div class="container-fluid bg-secondary-subtle py-2 rounded-1">
 
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 bg-body-secondary p-2 rounded-2">
-              <span class="fw-bold fs-5 text-uppercase">APPOINTMENTS LIST</span>
+              <span class="fw-bold fs-5 text-uppercase">TODAY'S APPOINTMENTS</span>
               <div class="d-flex gap-2 ">
                 <div class="d-flex align-items-center" style="flex-basis:300px">
                   <span for="#sort" class="px-2 text-nowrap">Sort By</span>
@@ -170,7 +180,85 @@ include('./includes/db_conn.php');
                               <div class="input-group form-input-sm d-flex align-items-center gap-2 ">
                                   <input type="text" class="form-control w-50 shadow-none" name="search" id="search_app" placeholder="&#xF002; Search..." aria-label="Search..." aria-describedby="button-addon2" style="font-family:Poppins, FontAwesome">
                                   <!-- <a href="#" class="text-secondary"> <i class="fa fa-th-large mx-1 fs-3" aria-hidden="true"></i></a> -->
-                                  <a href="#" class="text-secondary"><i class="fa fa-bars mx-1 fs-3" aria-hidden="true"></i></a>
+                                  <!-- <a href="#" class="text-secondary"><i class="fa fa-bars mx-1 fs-3" aria-hidden="true"></i></a> -->
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3 mt-3 shadow">
+                            <table class="table text-center table-borderless">
+                                <thead class="border-bottom border-2 rounded-2">
+                                  <tr>
+                                    <th scope="col">Student No.</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Reference No.</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <a href="#" class="nav-link">
+
+                                        <?php if(mysqli_num_rows($fetchAllAppointmentstoday) > 0) { 
+                                          while ($appointed = mysqli_fetch_assoc($fetchAllAppointmentstoday)) {  
+                                            ?>
+
+                                        <tr>        
+                                            <!-- <td colspan="2"><img src="./assets/badang.JPG"  width="65" height="65" alt=""></td> -->
+                                            <td><?=$appointed['student_id']?></td>
+                                            <td><?=$appointed['lastname']?>, <?=$appointed['firstname']?> <?=$appointed['middlename']?></td>
+                                            <td><?=$appointed['app_type']?></td>
+                                            <td><?=$appointed['app_date']?></td>
+                                            <td><?=$appointed['app_time']?></td>
+                                            <td><?=$appointed['reference_no']?></td>
+                                            <td><label style="color: Green; font-weight: bold;"><?=$appointed['app_status']?></label></td>
+                                            <td><a href="#view" class="custom_btn" style="text-decoration: none; color: Blue;font-weight: bold;" data-toggle="modal" data-ref_no = "<?=$appointed['reference_no']?>" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="view_appointment">View</a></td>
+                                        </tr>
+
+                                        <?php } } ?>
+                                        
+                                     </a>
+                                </tbody>
+                              </table>
+
+              <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content" id="appointment_content"></div>
+                </div>
+              </div>
+  </div>   
+  
+  <hr>
+  
+  </div>
+  
+  <div class="container-fluid">
+          <div class="container-fluid bg-secondary-subtle py-2 rounded-1">
+
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 bg-body-secondary p-2 rounded-2">
+              <span class="fw-bold fs-5 text-uppercase">DONE APPOINTMENTS</span>
+              <div class="d-flex gap-2 ">
+                <div class="d-flex align-items-center" style="flex-basis:300px">
+                  <span for="#sort" class="px-2 text-nowrap">Sort By</span>
+                  <select class="form-select shadow-none" aria-label="Default select example" name="sort" id="sort_app">
+                    <option name="sort" value="id">All</option>
+                    <option name="sort" value="app_type">Type of Appointment</option>
+                    <!-- <option name="sort" value="app_type">Type</option>
+                                    <option name="sort" value="app_time">Time</option>
+                                    <option name="sort" value="app_date">Date</option> -->
+                    <!-- <option name="sort" value="scheduled">Scheduled</option>
+                                    <option name="sort" value="cancelled">Cancelled</option> -->
+                                    <!-- <option name="sort" value="pending">Pending</option> -->
+                                  </select>
+                                </div>
+                  
+                              <div class="input-group form-input-sm d-flex align-items-center gap-2 ">
+                                  <input type="text" class="form-control w-50 shadow-none" name="search" id="search_app" placeholder="&#xF002; Search..." aria-label="Search..." aria-describedby="button-addon2" style="font-family:Poppins, FontAwesome">
+                                  <!-- <a href="#" class="text-secondary"> <i class="fa fa-th-large mx-1 fs-3" aria-hidden="true"></i></a> -->
+                                  <!-- <a href="#" class="text-secondary"><i class="fa fa-bars mx-1 fs-3" aria-hidden="true"></i></a> -->
                               </div>
                             </div>
                         </div>
@@ -193,7 +281,8 @@ include('./includes/db_conn.php');
                                     <a href="#" class="nav-link">
 
                                         <?php if(mysqli_num_rows($fetchAllAppointments) > 0) { 
-                                          while ($appoint = mysqli_fetch_assoc($fetchAllAppointments)) {  ?>
+                                          while ($appoint = mysqli_fetch_assoc($fetchAllAppointments)) {  
+                                            ?>
 
                                         <tr>        
                                             <!-- <td colspan="2"><img src="./assets/badang.JPG"  width="65" height="65" alt=""></td> -->
@@ -218,7 +307,11 @@ include('./includes/db_conn.php');
                   <div class="modal-content" id="appointment_content"></div>
                 </div>
               </div>
-  </div>                          
+  </div>   
+  
+  
+  </div>   
+
     </div>
      <div class="position-fixed bottom-0 end-0 m-3 px-3 py-2 rounded-circle"  style="background-color:#134E8E;">
       <a href="#top"><i class="fa-solid fa-arrow-up fs-3 text-light"></i></a>

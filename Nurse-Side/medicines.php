@@ -7,7 +7,7 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
   header("location: index.php");
 }
 $emp_id = $_SESSION['emp_id'];
-$medicine = "SELECT * FROM `medicine` a JOIN `nurses` b ON a.campus = b.campus WHERE b.emp_id = '$emp_id'";
+$medicine = "SELECT * FROM `medicine` a JOIN `nurses` b ON a.campus = b.campus WHERE a.campus = ''";
 $fetchAllMedicine = mysqli_query($conn1, $medicine);
 
 ?>

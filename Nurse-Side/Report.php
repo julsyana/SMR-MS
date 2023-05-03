@@ -7,11 +7,16 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
   //redirect to login
   header("location: index.php");
 }
-
+$emp_id = $_SESSION['emp_id'];
 
 $fetchAllMedicine = mysqli_query($conn1, "SELECT * FROM `medicine`");
 
-$fetchAllConsultations = mysqli_query($conn1, "SELECT * FROM `consultations`");
+$fetchAllConsultations = mysqli_query($conn1, "SELECT * FROM `consultations` a 
+                                                JOIN `mis.student_info` b 
+                                                ON a.student_id = b.student_id
+                                                JOIN `mis.enrollment_status` c
+                                                ON a.student_id = c.student_id
+                                                ORDER BY a.id DESC");
 
 $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment`");
 
@@ -204,20 +209,21 @@ $fetchAllAppointments = mysqli_query($conn1, "SELECT * FROM `stud_appointment`")
                     <?php if (mysqli_num_rows($fetchAllConsultations) > 0) {
                       while ($con = mysqli_fetch_assoc($fetchAllConsultations)) {
 
-                        $conDate = convertDate($con['date_of_consultation']);
+                        $conDate = strtotime($con['date_of_consultation']); 
+                           $formattedDate = date('F d, Y g:i A', $conDate);
 
                     ?>
 
                         <tr class="container">
                           <td> <?= $con['student_id'] ?> </td>
-                          <td> <?= $con['fullname'] ?> </td>
-                          <td> SBIT-3A </td>
-                          <td> <?= $conDate ?> </td>
+                          <td> <?= $con['firstname']." ". $con['middlename']." ".$con['lastname']?> </td>
+                          <td> <?= $con['section']?> </td>
+                          <td> <?= $formattedDate ?> </td>
                           <td> <?= $con['body_temp'] ?> </td>
                           <td> <?= $con['symptoms'] ?> </td>
                           <td> <?= $con['medicine'] ?> </td>
                           <td> <?= $con['how_long'] ?> Hour/s </td>
-                          <td> Nr. John Nicole Ablhay </td>
+                          <td> </td>
                           <td style="color:green"> <b> Cleared </b></td>
                         </tr>
 

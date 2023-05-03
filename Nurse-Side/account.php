@@ -1,12 +1,17 @@
 <?php
 session_start();
-
+include('./includes/db_conn.php');
 if (!isset($_SESSION['emp_id']) && !isset($_SESSION['username'])) {
   //redirect to login
   header("location: index.php");
 }
+$emp_id = $_SESSION['emp_id'];
+$query = "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'";
+$result = mysqli_query($conn1, $query);
 
+$res_nurse = mysqli_fetch_assoc($result);
 
+      // return $res_nurse;
 
 ?>
 <!DOCTYPE html>
@@ -138,33 +143,33 @@ if (!isset($_SESSION['emp_id']) && !isset($_SESSION['username'])) {
           <!-- <img src="" alt=""> -->
           <div class="d-flex p-4 border-bottom">
             <div class="">
-              <div style="width: 160px; height: 160px" class="border mr-2 bg-primary"></div>
+              <img src="./assets/<?=$res_nurse['profile_pic'];?>" alt="" style="width:160px; height:170px; object-fit:cover;">
             </div>
             <div class="ps-3 w-100" style="font-size: 14px">
               <div class="row  row-cols-2 mb-1">
-                <div class="col">Emp ID:</div>
+                <div class="col">Employee ID</div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Emp ID:" style=" font-size: 14px">
+                  <input type="text" class="form-control" value="<?=$res_nurse['emp_id'];?>" style=" font-size: 14px" disabled>
                 </div>
               </div>
               <div class="row row-cols-2 mb-1">
                 <div class="col">Email:</div>
                 <div class="col">
-                  <input type="text" placeholder="Email Address" class="form-control" style="font-size: 14px">
+                  <input type="text" value="<?=$res_nurse['email'];?>" class="form-control" style="font-size: 14px" disabled>
                 </div>
 
               </div>
               <div class="row row-cols-2 mb-1">
                 <div class="col">Position:</div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Position" style="font-size: 14px">
+                  <input type="text" class="form-control" value="<?=$res_nurse['position'];?>" style="font-size: 14px" disabled>
                 </div>
 
               </div>
               <div class="row row-cols-2 mb-1">
                 <div class="col">Campus Assigned:</div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Campus Assigned" style="font-size: 14px">
+                  <input type="text" class="form-control" value="<?=$res_nurse['campus'];?>" style="font-size: 14px" disabled>
                 </div>
 
               </div>
@@ -214,33 +219,33 @@ if (!isset($_SESSION['emp_id']) && !isset($_SESSION['username'])) {
           </div>
 
           <div class="row row-cols-4 gx-2 p-4 border-bottom" style="font-size: 14px">
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="exampleFormControlInput1">Username</label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Username" style="font-size: 14px">
-            </div>
+            </div> -->
             <div class="mb-3">
               <label for="exampleFormControlInput1">Firstname</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Firstname" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['firstname'];?>" disabled style="font-size: 14px">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1">Lastname</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Lastname" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['lastname'];?>" disabled style="font-size: 14px">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1">Middlename</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Middlename" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['middlename'];?>" disabled style="font-size: 14px">
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="exampleFormControlInput1">Age</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Age" style="font-size: 14px">
-            </div>
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['age'];?>" disabled style="font-size: 14px">
+            </div> -->
             <div class="mb-3">
               <label for="exampleFormControlInput1">Birthdate</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Birthdate" style="font-size: 14px">
+              <input type="int" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['birthdate'];?>" disabled style="font-size: 14px">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1">Sex</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Sex" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['gender'];?>" disabled style="font-size: 14px">
             </div>
 
 
@@ -248,41 +253,41 @@ if (!isset($_SESSION['emp_id']) && !isset($_SESSION['username'])) {
           <div class="row row-cols-4 gx-2 p-4 border-bottom" style="font-size: 14px">
             <div class="mb-3">
               <label for="exampleFormControlInput1">Mobile Number</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Mobile Number" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['contact_num'];?>" disabled style="font-size: 14px">
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="exampleFormControlInput1">Telephone No. (Optional)</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Telephone No. (Optional)" style="font-size: 14px">
-            </div>
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['telephone'];?>" disabled style="font-size: 14px">
+            </div> -->
             <div class="mb-3 col-6">
               <label for="exampleFormControlInput1">Email Address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email Address" style="font-size: 14px">
+              <input type="email" class="form-control" id="exampleFormControlInput1" value="<?=$res_nurse['email'];?>" disabled style="font-size: 14px">
             </div>
 
 
 
           </div>
-          <div class="row row-cols-4 gx-2 p-4 " style="font-size: 14px">
+          <!-- <div class="row row-cols-4 gx-2 p-4 " style="font-size: 14px">
             <div class="mb-3 col-3">
               <label for="exampleFormControlInput1">Fullname</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Fullname" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Fullname" style="font-size: 14px">
             </div>
             <div class="mb-3 col-2">
               <label for="exampleFormControlInput1">Contact Number</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Contact Number" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Contact Number" style="font-size: 14px">
             </div>
             <div class="mb-3 col-5">
               <label for="exampleFormControlInput1">Complete Address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Complete Address" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Complete Address" style="font-size: 14px">
             </div>
             <div class="mb-3 col-2">
               <label for="exampleFormControlInput1">Relationship</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Relationship" style="font-size: 14px">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Relationship" style="font-size: 14px">
             </div>
 
 
 
-          </div>
+          </div> -->
         </div>
       </div>
 
