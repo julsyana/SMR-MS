@@ -8,6 +8,8 @@
    require '../../../PHPMailer/src/PHPMailer.php';
    require '../../../PHPMailer/src/SMTP.php';
 
+  
+
 
    function sendEmail($email, $subject, $mess, $title) {
 

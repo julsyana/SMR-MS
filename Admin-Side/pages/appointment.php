@@ -214,9 +214,9 @@
                                        <i class="fas fa-edit    "></i>
                                     </button>
 
-                                    <button id="app-del" data-role="app-del" data-id="<?=$row['app_id']?>">
+                                    <!-- <button id="app-del" data-role="app-del" data-id="<?=$row['app_id']?>">
                                     <i class="fas fa-trash-alt    "></i>
-                                    </button>
+                                    </button> -->
                                  </div>   
                               </td>
                            </tr>

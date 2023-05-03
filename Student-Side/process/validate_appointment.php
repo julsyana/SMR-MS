@@ -5,11 +5,16 @@
    include "../redo/functions/student_function.php";
    include "../redo/functions/function.php";
    include "../redo/functions/generate_qr.php";
+   // include "../redo/functions/sendemail.php";
 
    session_start();
 
-   
+   $stud_id = $_SESSION['student_id'];
 
+   $stud_logged = selStudentAcc($conn, $stud_id);
+
+
+  
 
    if(isset($_POST['submitBtn'])){
 
@@ -33,8 +38,8 @@
       $student_id = $_SESSION['student_id'];
       $medType = $_POST['med_type'];
       $roa = $_POST['roa'];
-      $date = $_POST['day'];
-      $time = $_POST['timeSlot'];
+      $date = $_POST['availableDates'];
+      // $time = $_POST['timeSlot'];
       $new_dateApp = "$year-$month-$date";
       
 
@@ -79,14 +84,14 @@
       $qrName = generateQR($tempDir, $codeContents);
      
 
-      $insertNewApp = insertNewAppointment($conn, $ref_no, $student_id, $medType, $roa, $new_dateApp, $time, $date_today, $qrName);
+      $insertNewApp = insertNewAppointment($conn, $ref_no, $student_id, $medType, $roa, $date, $time, $date_today, $qrName);
 
       if(!$insertNewApp) {
          
          echo mysqli_error($conn);
 
       }else {
-
+         
          header("location: ../redo/pages/appointment-list.php?success");
 
       }

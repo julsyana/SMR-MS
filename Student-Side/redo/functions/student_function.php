@@ -244,9 +244,9 @@
    function insertNewAppointment($conn, $ref_no, $stud_id, $appType, $appReason, $appDate, $appTime, $dateApply, $qrName){
 
       $ins = "INSERT INTO `stud_appointment`
-      (`reference_no`, `student_id`, `app_type`, `app_reason`, `app_date`, `app_time`, `date_apply`, `app_status`, `app_qr`) 
+      (`reference_no`, `student_id`, `app_type`, `app_reason`, `app_date`, `date_apply`, `app_status`, `app_qr`) 
       VALUES 
-      ('$ref_no','$stud_id','$appType','$appReason','$appDate','$appTime','$dateApply','scheduled', '$qrName')";
+      ('$ref_no','$stud_id','$appType','$appReason','$appDate', '$dateApply','scheduled', '$qrName')";
 
       $res_query = mysqli_query($conn, $ins);
 
