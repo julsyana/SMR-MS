@@ -128,6 +128,13 @@
                            <option value="Dental"> Dental Service </option> 
                         </select>
                         <span>* <span class="type-message"></span></span>
+
+                         <select name="availableDates" id="available-dates" disabled> 
+                           <option value=""> --Select available date-- </option> 
+                           <!-- <option value="Medical"> Medical Service </option> 
+                           <option value="Dental"> Dental Service </option>  -->
+                        </select>
+                        <span>* <span class="type-message"></span></span>
                      </div>
 
                      <div class="form-input">
@@ -165,7 +172,7 @@
 
                            <a href="./appointment-list.php"> Back </a>
                            
-                           <button type="button" id="appoint-next"> Next </button>
+                           <button type="button" name="submitBtn" id="appoint-next"> Submit </button>
 
                         </div>
 
@@ -174,139 +181,37 @@
 
                   </div>
 
-                  <div class="set-schedule">
+                  <!-- <div class="set-schedule">
 
                      <div class="header-title">
-                        <p> Please select your preferred date & time </p>
+                        <p> Please review your appointment </p>
                      </div>
 
-                     <div class="calendar-container">
+                     <div class="review-appointment">
 
-                        <div class="calendar">
-
-                           <div class="month-year-button">
-
-                              <h3 class="mos-year"> <span class="month"> March </span> <span class="year"> 2023 </span>  </h3>
-
-                              <!-- <div class="button-next-prev">
-                                 <div class="btn prev-btn">
-                                    <button type="button"> 
-                                       <i class="fas fa-less-than"></i> 
-                                    </button>                               
-                                 </div>
-
-                                 <div class="btn next-btn">
-                                    <button type="button"> 
-                                       <i class="fas fa-greater-than"></i>
-                                    </button>
-                                 </div>
-                              </div> -->
-                           </div>
-
-
-                           <div class="weeks">
-                              <div class="week">
-                                 <p> Sun </p>
-                              </div>
-
-                              <div class="week">
-                                 <p> Mon </p>
-                              </div>
-
-                              <div class="week">
-                                 <p> Tue </p>
-                              </div>
-
-                              <div class="week">
-                                 <p> Wed </p>
-                              </div>
-
-                              <div class="week">
-                                 <p> Thu </p>
-                              </div>
-
-                              <div class="week">
-                                 <p> Fri </p>
-                              </div>
-
-                              <div class="week">
-                                 <p> Sat </p>
-                              </div>
-                           </div>
-
-
-                           <div class="days">
-                              <!-- <div class="day prev-date">
-                                 <label for="1"> 1 </label> 
-                                 <input type="radio" name="day" id="1"> 
-                              </div>
-
-                              <div class="day prev-date">
-                                 <label for="2"> 2 </label> 
-                                 <input type="radio" name="day" id="2"> 
-                              </div> -->
-
-                           </div>
+                        <div class="form-review">
+                           <label for=""> Service Type: </label>
+                           <span id="se-type"> </span>
                         </div>
 
-                        <div class="time-slot">
-                           <table border="0">
-                              <thead>
-                                 <tr> 
-                                    <th width="50%"> Time </th>
-                                    <th> Available Slots </th>
-                                 </tr>
-                              </thead>
-
-                              <tbody>
-                                 <tr>
-                                    <td>
-                                       <input type="radio" value="8:00 AM - 10:00 AM" name="timeSlot" id="time1" hidden required> 
-                                       <label for="time1"> 8:00 AM - 10:00 AM </label>
-                                    </td>
-
-                                    <td> 12 </td>
-                                 </tr>
-
-                                 <tr>
-                                    <td>
-                                       <input type="radio" value="10:00 AM - 12:00 PM" name="timeSlot" id="time2" hidden required> 
-                                       <label for="time2"> 10:00 AM - 12:00 PM </label>
-                                    </td>
-
-                                    <td> 12 </td>
-                                 </tr>
-
-                                 <tr>
-                                    <td>
-                                       <input type="radio" value="1:00 PM - 3:00 PM" name="timeSlot" id="time3" hidden required> 
-                                       <label for="time3"> 1:00 PM - 3:00 PM </label>
-                                    </td>
-
-                                    <td> 12 </td>
-                                 </tr>
-
-                                 <tr>
-                                    <td>
-                                       <input type="radio" value="3:00 PM - 5:00 PM" name="timeSlot" id="time5" hidden required> 
-                                       <label for="time5"> 3:00 PM - 5:00 PM </label>
-                                    </td>
-
-                                    <td> 12 </td>
-                                 </tr>
-                              </tbody>
-                           </table>
+                         <div class="form-review">
+                           <label for=""> Date Schedule: </label>
+                           <span id="se-date"> </span>
                         </div>
-                     </div>
 
-                     
+                         <div class="form-review">
+                           <label for=""> Reason: </label>
+                           <span id="se-reason"> </span>
+                        </div>
+
+                     </div> 
 
                      <div class="form-button-next">
                         <button type="button" id="back-btn"> back </button>
                         <button type="submit" name="submitBtn" id="submit-btn"> Submit </button>
                      </div>
 
-                  </div>
+                  </div> -->
 
                </form>
 
@@ -320,7 +225,7 @@
 
 </body>
 
-<script src="../js/calendar.js"></script>  
+<!-- <script src="../js/calendar.js"></script>   -->
 <script src="../js/image_viewer.js"> </script>
 
 <script>
@@ -328,6 +233,30 @@
 
       $('.type-of-appointment').show();
       $('.set-schedule').hide();
+
+      $('#med-type').change(function(){
+
+         let med_type = $(this).val();
+
+
+         if(med_type != ""){
+
+            $('#available-dates').attr('disabled', false);
+
+            console.log(med_type);
+
+            $('#available-dates').load('../ajax/process/med_type.php', {
+               med_type: med_type,
+            });
+
+         } else {
+            $('#available-dates').attr('disabled', true);
+         }
+
+       
+
+      });
+
 
 
       $('#appoint-next').click(function(){
@@ -341,6 +270,7 @@
             $('.type-message').html("Required!");
             $('.roa-message').html("");
             $('.message-validation').html('<span style="color: var(--decline);"></span>');
+            $('#available-dates').css('border', '1px solid red');
             
          } else {
 
@@ -368,8 +298,11 @@
                   $('.roa-message').html("");
                   $('.message-validation').html('<span style="color: var(--decline);"></span>');
 
-                  $('.type-of-appointment').hide();
-                  $('.set-schedule').show();
+                  // $('.type-of-appointment').hide();
+                  
+                  // $('.set-schedule').show();
+
+                  $('#appoint-next').attr('type', 'submit');
 
                   
                }
@@ -388,16 +321,15 @@
                } else {
                   
                   $('.roa-message').html("");
-                  $('.type-of-appointment').hide();
-                  $('.set-schedule').show();
+                  // $('.type-of-appointment').hide();
+                  // $('.set-schedule').show();
+                  $('#appoint-next').attr('type', 'submit');
                   
                }
             }
 
          }
 
-
-        
          
       });
 

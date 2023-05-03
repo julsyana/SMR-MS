@@ -1,7 +1,8 @@
 <?php
 
    date_default_timezone_set("Asia/Manila");
-  
+   
+   $curr_month = date("Y-m");
    $curr_date = date("Y-m-d");
    $curr_time = date("H:i:s");
 

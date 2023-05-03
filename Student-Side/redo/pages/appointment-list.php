@@ -127,7 +127,6 @@
                         <th> Appointment Type </th>
                         <th> Reference Number </th>
                         <th> Appointment Date </th>
-                        <th> Appointment Time </th>
                         <th> Status </th>
                         <th> Action </th>
                      </tr>
@@ -165,7 +164,7 @@
                         </td>
                         <td> <?=$row['reference_no']?> </td>
                         <td> <?=$appointment_date?></td>
-                        <td> <?=$row['app_time']?></td>
+                        
                         <td> 
                            <div class="status"> 
                               <?php if($row['app_status'] === 'scheduled') { ?>

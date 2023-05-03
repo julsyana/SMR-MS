@@ -4,7 +4,7 @@ $sname= "localhost";
 $unmae= "root";
 $password = "";
 
-$db_name = "clinicms_db_test";
+$db_name = "clinicms_db";
 
 $conn = mysqli_connect($sname, $unmae, $password, $db_name);
 
