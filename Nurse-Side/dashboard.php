@@ -12,8 +12,8 @@ if (!isset($_SESSION['emp_id']) || !isset($_SESSION['username'])) {
 
 <?php
 
-include('./includes/db_conn.php');
-$emp_id = $_SESSION['emp_id'];
+  include('./includes/db_conn.php');
+  $emp_id = $_SESSION['emp_id'];
 
 // SELECT ALL NURSES
 $fetchNurseAccount = mysqli_query($conn1, "SELECT * FROM `nurses` WHERE emp_id = '$emp_id'");

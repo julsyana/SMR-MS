@@ -44,7 +44,7 @@
                      </div>
                   </div> -->
 
-                  <div class="list-of-data-tbl">
+                  <div class="list-of-data-tbl" id="divToPrint">
                      
                      <table border="0">
                         <thead>
@@ -108,12 +108,21 @@
                </div>
 
                <div class="form-button">
-                  <button id="printAppointment"> <i class="fas fa-print"></i> Print </button> 
+                  <i class="fas fa-print"><input style="background: #3E64FF;" type="button" value="print" onclick="PrintDiv();" /></i>
+                  <!-- <button id="printAppointment"> <i class="fas fa-print"></i> Print </button>  -->
                   or 
                   <a href="#"> <i class="fa fa-download" aria-hidden="true"></i> Download </a>
                </div>
 
-
+<script type="text/javascript">     
+    function PrintDiv() {    
+       var divToPrint = document.getElementById('divToPrint');
+       var popupWin = window.open('', '_blank', 'width=300,height=300');
+       popupWin.document.open();
+       popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+        popupWin.document.close();
+            }
+ </script>
 
 <!-- charts -->
 <?php
